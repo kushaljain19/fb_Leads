@@ -14,6 +14,6 @@ error_log(print_r($input, true));
 $leadgen_id = $input["entry"][0]["changes"][0]["value"]["leadgen_id"];
 error_log(print_r($leadgen_id,true));
 //
-//$form = new Lead(<LEAD_ID>);
-//$form->read();
-//error_log(print("LeadGen Details".$form));
+$form = new Lead($leadgen_id);
+$form->read();
+error_log(print_r("LeadGen Details = ".$form,true));
