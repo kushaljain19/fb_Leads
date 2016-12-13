@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . 'FacebookAds/Object/Lead.php'
 $challenge = $_REQUEST['hub_challenge'];
 $verify_token = $_REQUEST['hub_verify_token'];
 
