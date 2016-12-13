@@ -14,6 +14,6 @@ $input = json_decode(file_get_contents('php://input'), true);
 $leadgen_id = $input["entry"][0]["changes"][0]["value"]["leadgen_id"];
 error_log(print("LeadGen Id".$leadgen_id));
 
-$form = new Lead(<LEAD_ID>);
+$form = new Lead($leadgen_id);
 $form->read();
 error_log(print("LeadGen Details".$form));
