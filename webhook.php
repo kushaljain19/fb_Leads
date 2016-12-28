@@ -8,6 +8,8 @@ if ($verify_token === 'abc123') {
   echo $challenge;
 }
 
+error_log("current php version = ".print_r(phpversion(), true));
+
 $input = json_decode(file_get_contents('php://input'), true);
 error_log(print_r($input, true));
 
