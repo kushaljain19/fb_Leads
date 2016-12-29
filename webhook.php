@@ -1,5 +1,13 @@
 <?php
 //include ('FacebookAds/Object/Lead.php');
+use FacebookAds\Api;
+
+// Initialize a new Session and instanciate an Api object
+Api::init($app_id, $app_secret, $access_token);
+
+// The Api object is now available trough singleton
+$api = Api::instance();
+
 use FacebookAds\Object\Lead;
 $challenge = $_REQUEST['hub_challenge'];
 $verify_token = $_REQUEST['hub_verify_token'];
