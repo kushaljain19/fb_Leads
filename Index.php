@@ -9,10 +9,8 @@ $fb = new \Facebook\Facebook([
    $permissions = []; // optional
    $helper = $fb->getRedirectLoginHelper();
    $accessToken = $helper->getAccessToken();
-   
-if (isset($accessToken)) {
-	
- 		$url = "https://graph.facebook.com/v2.6/me?fields=id,name,gender,email,picture,cover&access_token={$accessToken}";
+
+ 		$url = "https://graph.facebook.com/v2.6/1288988521191685&access_token={$accessToken}";
 		$headers = array("Content-type: application/json");
 		
 			 
@@ -30,7 +28,7 @@ if (isset($accessToken)) {
 		 $st=curl_exec($ch); 
 		 $result=json_decode($st,TRUE);
 		 echo "My name: ".$result['name'];
-		 echo "<img src=".$result['cover']['source'].">";
+		 echo $result;
 		
 } else {
 	$loginUrl = $helper->getLoginUrl('https://leadgenyog.herokuapp.com/', $permissions);
