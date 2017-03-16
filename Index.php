@@ -9,20 +9,4 @@ $fb = new \Facebook\Facebook([
    $permissions = []; // optional
    $helper = $fb->getRedirectLoginHelper();
    $accessToken = $helper->getAccessToken();
-
-$request = new FacebookRequest(
-  $session,
-  'GET',
-  '/1288988521191685'
-);
-
-$response = $request->execute();
-$graphObject = $response->getGraphObject();
-/* handle the result */
-		 $result=json_decode($graphObject,TRUE);
-		 echo $result;
-		
-} else {
-	$loginUrl = $helper->getLoginUrl('https://leadgenyog.herokuapp.com/', $permissions);
-	echo '<a href="' . $loginUrl . '">Login with Facebook</a>';
-}
+echo $accessToken;
