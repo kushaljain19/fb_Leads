@@ -15,9 +15,30 @@ $st=curl_exec($ch);
 $result=json_decode($st,TRUE);
 echo print_r($result,true);
 echo "<br/>";
+$email, $name, $phone_number,$city,$description; 
 //echo print_r($result["field_data"][0]["values"], true);
 $FieldData = $result["field_data"];
 foreach ( $FieldData as $key=>$val ){
-   print "$key = ".print_r($val,true)."<br>";
-   print $val["name"]."<br>";
+   //print "$key = ".print_r($val,true)."<br>";
+   //print $val["name"]."<br>";
+   if($val["name"] == "full_name")
+   {
+      $name = $val["values"][0];
+   }elseif($val["name"] == "email")
+   {
+      $email = $val["values"][0];
+   }elseif($val["name"] == "phone_number")
+   {
+      $phone_number = $val["values"][0];
+   }elseif($val["name"] == "city")
+   {
+      $city = $val["values"][0];
+   }else{
+      $description .= $val["name"]."<br/>".$val["values"][0]."<br/>";
+   }  
 }
+print "$name<br/>";
+print "$email<br/>";
+print "$phone_number<br/>";
+print "$city<br/>";
+print "$description<br/>";
