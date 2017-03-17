@@ -33,10 +33,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $st=curl_exec($ch); 
 $result=json_decode($st,TRUE);
 error_log(print_r($result,true));
-error_log(print("Hello"));
-error_log(print_r($result[0]["field_data"], true));
-error_log(print("Hii"));
-error_log(print_r($result["field_data"], true));
+error_log(print_r($result["field_data"][0]["values"], true));
 
 //$name = $result["field_data"][3]["values"][0];
 //$email = $result["field_data"][2]["values"][0];
