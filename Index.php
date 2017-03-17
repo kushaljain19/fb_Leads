@@ -18,5 +18,5 @@ echo "<br/>";
 //echo print_r($result["field_data"][0]["values"], true);
 $FieldData = $result["field_data"];
 foreach ( $FieldData as $key=>$val ){
-   print "$key = print_r($val,true)<br>";
+   print "$key = ".print_r($val,true)."<br>";
 }
