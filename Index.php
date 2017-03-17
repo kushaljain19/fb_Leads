@@ -55,11 +55,11 @@ $campaign = $FormDetails["name"];
 $strZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/insertRecords?scope=crmapi&newFormat=1&version=2&duplicateCheck=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&xmlData=<Leads><row no='1'><FL val='Last Name'>".$name."</FL><FL val='Email'>".$email."</FL><FL val='City'>".$city."</FL><FL val='Lead Source'>Facebook</FL><FL val='Campaign'>".$campaign."</FL><FL val='Mobile'>".$phone_number."</FL><FL val='Description'>".$description."</FL></row></Leads>";
 print "$strZohoUrl";
 
-$ZohoHeaders = array("Content-Type:application/xml");
+//$ZohoHeaders = array("Content-Type:application/xml");
 $ch2 = curl_init();
-curl_setopt($ch2, CURLOPT_HTTPHEADER, $ZohoHeaders);
+curl_setopt($ch2, CURLOPT_HTTPHEADER, false);
 curl_setopt($ch2, CURLOPT_URL, $strZohoUrl);
-curl_setopt($ch2, CURLOPT_HEADER, 0);
+//curl_setopt($ch2, CURLOPT_HEADER, 0);
 curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 //curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);  
 //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  
@@ -76,4 +76,5 @@ curl_close($ch2);
 $xml = new SimpleXMLElement($zohoResponse);
 
 print_r($xml);
+echo $zohoResponse;
 //echo print_r($ZohoResponse,true);
