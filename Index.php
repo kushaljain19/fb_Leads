@@ -15,7 +15,7 @@ $st=curl_exec($ch);
 $result=json_decode($st,TRUE);
 echo print_r($result,true);
 echo "<br/>";
-$email, $name, $phone_number,$city,$description; 
+$email='', $name='', $phone_number='',$city='',$description=''; 
 //echo print_r($result["field_data"][0]["values"], true);
 $FieldData = $result["field_data"];
 foreach ( $FieldData as $key=>$val ){
@@ -23,17 +23,22 @@ foreach ( $FieldData as $key=>$val ){
    //print $val["name"]."<br>";
    if($val["name"] == "full_name")
    {
+      print "In Name";
       $name = $val["values"][0];
    }elseif($val["name"] == "email")
    {
+      print "In Email";
       $email = $val["values"][0];
    }elseif($val["name"] == "phone_number")
    {
+      print "In Number";
       $phone_number = $val["values"][0];
    }elseif($val["name"] == "city")
    {
+      print "In City";
       $city = $val["values"][0];
    }else{
+      print "In Description";
       $description .= $val["name"]."<br/>".$val["values"][0]."<br/>";
    }  
 }
