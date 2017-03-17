@@ -13,5 +13,5 @@ curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
 $st=curl_exec($ch); 
 $result=json_decode($st,TRUE);
-print_r($result,true);
-print_r($result["field_data"][0]["values"], true);
+echo print_r($result,true);
+echo print_r($result["field_data"][0]["values"], true);
