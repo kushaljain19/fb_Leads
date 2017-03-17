@@ -16,4 +16,4 @@ $headers = array("Content-type: application/json");
 
  $st=curl_exec($ch); 
  $result=json_decode($st,TRUE);
-echo $result;
+echo print_r($result,true);
