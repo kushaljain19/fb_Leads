@@ -19,4 +19,5 @@ echo "<br/>";
 $FieldData = $result["field_data"];
 foreach ( $FieldData as $key=>$val ){
    print "$key = ".print_r($val,true)."<br>";
+   print $val["name"]."<br>";
 }
