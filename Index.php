@@ -72,7 +72,7 @@ curl_close($ch2);
 
 echo $zohoResponse;
 $zohoResponse2=json_decode($zohoResponse,TRUE);
-echo $zohoResponse;
+echo $zohoResponse["LeadId"];
 //$UpdateZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/updateRecords";
 //$updateZoho_post_fields = "";
 //$ch3 = curl_init();
