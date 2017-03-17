@@ -32,10 +32,11 @@ curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
 $st=curl_exec($ch); 
 $result=json_decode($st,TRUE);
+error_log(print_r($input["field_data"], true));
 //error_log(print_r($result,true));
-$name = $result["field_data"][3]["values"][0];
-$email = $result["field_data"][2]["values"][0];
-$mobile = $result["field_data"][4]["values"][0];
-$city = $result["field_data"][5]["values"][0];
+//$name = $result["field_data"][3]["values"][0];
+//$email = $result["field_data"][2]["values"][0];
+//$mobile = $result["field_data"][4]["values"][0];
+//$city = $result["field_data"][5]["values"][0];
 //error_log(print("Name = {$name}, Email = {$email}, Mobile = {$mobile}, City = {$city}"));
 error_log(print($name));
