@@ -73,8 +73,8 @@ $zohoResponse=curl_exec($ch2);
 curl_close($ch2);
 
 //Pass results to the SimpleXMLElement function
-$xml = new SimpleXMLElement($zohoResponse);
+//$xml = new SimpleXMLElement($zohoResponse);
 
-print_r($xml);
+//print_r($xml);
 echo $zohoResponse;
 //echo print_r($ZohoResponse,true);
