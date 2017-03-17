@@ -55,9 +55,9 @@ $campaign = $FormDetails["name"];
 $strZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/insertRecords?scope=crmapi&newFormat=1&version=2&duplicateCheck=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&xmlData=<Leads><row no='1'><FL val='Last Name'>".$name."</FL><FL val='Email'>".$email."</FL><FL val='City'>".$city."</FL><FL val='Lead Source'>Facebook</FL><FL val='Campaign'>".$campaign."</FL><FL val='Mobile'>".$phone_number."</FL><FL val='Description'>".$description."</FL></row></Leads>";
 print "$strZohoUrl";
 
-//$ZohoHeaders = array("Content-type: application/json");
+$ZohoHeaders = array("Content-type: application/json");
 $ch = curl_init();
-//curl_setopt($ch, CURLOPT_HTTPHEADER, $FormHeaders);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $ZohoHeaders);
 curl_setopt($ch, CURLOPT_URL, $strZohoUrl);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);  
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  
