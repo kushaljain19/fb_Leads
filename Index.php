@@ -43,4 +43,4 @@ foreach ( $FieldData as $key=>$val ){
 //print "$city <br/>";
 //print "$description <br/>";
 $strZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/insertRecords?scope=crmapi&newFormat=1&version=2&duplicateCheck=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&xmlData=<Leads><row no='1'><FL val='Last Name'>".$name."</FL><FL val='Email'>".$email."</FL><FL val='City'>".$city."</FL><FL val='Lead Source'>Facebook Lead Ad</FL><FL val='Mobile'>".$phone_number."</FL><FL val='Description'>".$description."</FL></row></Leads>"
-echo $strZohoUrl;
+print $strZohoUrl;
