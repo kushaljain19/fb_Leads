@@ -59,11 +59,12 @@ $zoho_post_fields="IsReg=N&LName=".$name."&Mobile=".$phone_number."&Email=".$ema
 print $strZohoUrl."?".$zoho_post_fields;
 
 $ch2 = curl_init();
+curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true); 
 curl_setopt($ch2, CURLOPT_URL, $strZohoUrl."?".$zoho_post_fields);
-curl_setopt($ch2, CURLOPT_FOLLOWLOCATION, true);  
-curl_setopt($ch2, CURLOPT_TIMEOUT, 100);
-curl_setopt($ch2, CURLOPT_POST, 1);
-curl_setopt($ch2, CURLOPT_SSL_VERIFYPEER, true);
+//curl_setopt($ch2, CURLOPT_FOLLOWLOCATION, true);  
+//curl_setopt($ch2, CURLOPT_TIMEOUT, 100);
+//curl_setopt($ch2, CURLOPT_POST, 1);
+//curl_setopt($ch2, CURLOPT_SSL_VERIFYPEER, true);
 //curl_setopt($ch2, CURLOPT_POSTFIELDS, $zoho_post_fields);
 $zohoResponse=curl_exec($ch2);
 curl_close($ch2);
