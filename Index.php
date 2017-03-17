@@ -55,7 +55,8 @@ $campaign = $FormDetails["name"];
 //$strZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/insertRecords";
 $strZohoUrl = "api.5paisa.com/crmapi/api/preregister";
 //$zoho_post_fields="scope=crmapi&newFormat=1&version=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&xmlData=<Leads><row no='1'><FL val='Last Name'>".$name."</FL><FL val='Email'>".$email."</FL><FL val='City'>".$city."</FL><FL val='Lead Source'>Facebook</FL><FL val='Campaign'>".$campaign."</FL><FL val='Mobile'>".$phone_number."</FL><FL val='Description'>".$description."</FL></row></Leads>";
-$zoho_post_fields="IsReg=N&LName=".$name."&Mobile=".$phone_number."&Email=".$email."&LeadSource=Facebook&LeadCampaign=".$campaign."&UrlParam=Description%3D".$description;
+//$zoho_post_fields="IsReg=N&LName=".$name."&Mobile=".$phone_number."&Email=".$email."&LeadSource=Facebook&LeadCampaign=".$campaign."&UrlParam=Description%3D".$description;
+$zoho_post_fields="IsReg=N&LName=".$name."&Mobile=".$phone_number."&Email=".$email."&LeadSource=Facebook&LeadCampaign=".$campaign;
 print $strZohoUrl."?".$zoho_post_fields;
 
 $ch2 = curl_init();
