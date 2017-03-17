@@ -14,4 +14,9 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $st=curl_exec($ch); 
 $result=json_decode($st,TRUE);
 echo print_r($result,true);
-echo print_r($result["field_data"][0]["values"], true);
+echo "<br/>";
+//echo print_r($result["field_data"][0]["values"], true);
+$FieldData = $result["field_data"];
+foreach ( $FieldData as $key=>$val ){
+   print "$key = $val<br>";
+}
