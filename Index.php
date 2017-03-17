@@ -14,24 +14,6 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $st=curl_exec($ch); 
 $result=json_decode($st,TRUE);
 //echo print_r($result,true);
-//$email='', $name='', $phone_number='',$city='',$description=''; 
-//echo print_r($result["field_data"][0]["values"], true);
-$FormDetailUrl = "https://graph.facebook.com/v2.8/1188529894570882?access_token=EAARrtz2GsKUBALd8MakhGAQprYKeucW9nZC1oXbohk1pl8V3TZBP9GAN8VIBeI1NGdPCjyRWnOIGSnBcNh7DlBVGkoGvwOoRuwdmPqhcJEZBzPAJxi65l5LaVNHsOVOler89vXylk6iBahVdFTSFh0np1jHRgrDlzx7p9qZAxgZDZD";
-$FormHeaders = array("Content-type: application/json");
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_HTTPHEADER, $FormHeaders);
-curl_setopt($ch, CURLOPT_URL, $FormDetailUrl);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);  
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  
-curl_setopt($ch, CURLOPT_COOKIEJAR,'cookie.txt');  
-curl_setopt($ch, CURLOPT_COOKIEFILE,'cookie.txt');  
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
-curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3"); 
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
-$st=curl_exec($ch); 
-$FormDetails=json_decode($st,TRUE);
-echo print_r($FormDetails,true);
-
 
 $FieldData = $result["field_data"];
 foreach ( $FieldData as $key=>$val ){
@@ -53,10 +35,37 @@ foreach ( $FieldData as $key=>$val ){
       $description .= $val["name"]."<br/>".$val["values"][0]."<br/>";
    }
 }
-//print "$name <br/>";
-//print "$email <br/>";
-//print "$phone_number <br/>";
-//print "$city <br/>";
-//print "$description <br/>";
-$strZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/insertRecords?scope=crmapi&newFormat=1&version=2&duplicateCheck=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&xmlData=<Leads><row no='1'><FL val='Last Name'>".$name."</FL><FL val='Email'>".$email."</FL><FL val='City'>".$city."</FL><FL val='Lead Source'>Facebook Lead Ad</FL><FL val='Mobile'>".$phone_number."</FL><FL val='Description'>".$description."</FL></row></Leads>";
+
+$FormDetailUrl = "https://graph.facebook.com/v2.8/1188529894570882?access_token=EAARrtz2GsKUBALd8MakhGAQprYKeucW9nZC1oXbohk1pl8V3TZBP9GAN8VIBeI1NGdPCjyRWnOIGSnBcNh7DlBVGkoGvwOoRuwdmPqhcJEZBzPAJxi65l5LaVNHsOVOler89vXylk6iBahVdFTSFh0np1jHRgrDlzx7p9qZAxgZDZD";
+$FormHeaders = array("Content-type: application/json");
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_HTTPHEADER, $FormHeaders);
+curl_setopt($ch, CURLOPT_URL, $FormDetailUrl);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);  
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  
+curl_setopt($ch, CURLOPT_COOKIEJAR,'cookie.txt');  
+curl_setopt($ch, CURLOPT_COOKIEFILE,'cookie.txt');  
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
+curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3"); 
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
+$st=curl_exec($ch); 
+$FormDetails=json_decode($st,TRUE);
+echo print_r($FormDetails,true);
+$campaign = $FormDetails["name"];
+$strZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/insertRecords?scope=crmapi&newFormat=1&version=2&duplicateCheck=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&xmlData=<Leads><row no='1'><FL val='Last Name'>".$name."</FL><FL val='Email'>".$email."</FL><FL val='City'>".$city."</FL><FL val='Lead Source'>Facebook</FL><FL val='Campaign'>".$campaign."</FL><FL val='Mobile'>".$phone_number."</FL><FL val='Description'>".$description."</FL></row></Leads>";
 print "$strZohoUrl";
+
+//$ZohoHeaders = array("Content-type: application/json");
+$ch = curl_init();
+//curl_setopt($ch, CURLOPT_HTTPHEADER, $FormHeaders);
+curl_setopt($ch, CURLOPT_URL, $strZohoUrl);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);  
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  
+curl_setopt($ch, CURLOPT_COOKIEJAR,'cookie.txt');  
+curl_setopt($ch, CURLOPT_COOKIEFILE,'cookie.txt');  
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
+curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3"); 
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
+$st=curl_exec($ch); 
+$ZohoResponse=json_decode($st,TRUE);
+echo print_r($ZohoResponse,true);
