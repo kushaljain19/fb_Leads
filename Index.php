@@ -23,27 +23,24 @@ foreach ( $FieldData as $key=>$val ){
    //print $val["name"]."<br>";
    if($val["name"] == "full_name")
    {
-      print "In Name";
       $name = $val["values"][0];
    }elseif($val["name"] == "email")
    {
-      print "In Email";
       $email = $val["values"][0];
    }elseif($val["name"] == "phone_number")
    {
-      print "In Number";
       $phone_number = $val["values"][0];
    }elseif($val["name"] == "city")
    {
-      print "In City";
       $city = $val["values"][0];
    }else{
-      print "In Description";
       $description .= $val["name"]."<br/>".$val["values"][0]."<br/>";
-   }  
+   }
 }
-print "$name <br/>";
-print "$email <br/>";
-print "$phone_number <br/>";
-print "$city <br/>";
-print "$description <br/>";
+//print "$name <br/>";
+//print "$email <br/>";
+//print "$phone_number <br/>";
+//print "$city <br/>";
+//print "$description <br/>";
+$strZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/insertRecords?scope=crmapi&newFormat=1&version=2&duplicateCheck=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&xmlData=<Leads><row no='1'><FL val='Last Name'>{$name}</FL><FL val='Email'>{$email}</FL><FL val='City'>{$city}</FL><FL val='Lead Source'>Facebook Lead Ad</FL><FL val='Mobile'>{$phone_number}</FL><FL val='Description'>{$description}</FL></row></Leads>"
+echo $strZohoUrl;
