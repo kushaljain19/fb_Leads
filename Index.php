@@ -68,6 +68,12 @@ curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 //curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
 //curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3"); 
 //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
-$st=curl_exec($ch2); 
-$ZohoResponse=json_decode($st,TRUE);
-echo print_r($ZohoResponse,true);
+$zohoResponse=curl_exec($ch2); 
+//Close curl object
+curl_close($ch2);
+
+//Pass results to the SimpleXMLElement function
+$xml = new SimpleXMLElement($zohoResponse);
+
+print_r($xml);
+//echo print_r($ZohoResponse,true);
