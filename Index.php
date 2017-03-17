@@ -15,11 +15,11 @@ $st=curl_exec($ch);
 $result=json_decode($st,TRUE);
 echo print_r($result,true);
 echo "<br/>";
-$email='', $name='', $phone_number='',$city='',$description=''; 
+//$email='', $name='', $phone_number='',$city='',$description=''; 
 //echo print_r($result["field_data"][0]["values"], true);
 $FieldData = $result["field_data"];
 foreach ( $FieldData as $key=>$val ){
-   //print "$key = ".print_r($val,true)."<br>";
+   print "$key = ".print_r($val,true)."<br>";
    //print $val["name"]."<br>";
    if($val["name"] == "full_name")
    {
