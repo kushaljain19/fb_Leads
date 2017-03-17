@@ -56,11 +56,11 @@ $strZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/insertRecords?scope=cr
 print "$strZohoUrl";
 
 //$ZohoHeaders = array("Content-Type:application/xml");
-$ch2 = curl_init();
-curl_setopt($ch2, CURLOPT_HTTPHEADER, false);
-curl_setopt($ch2, CURLOPT_URL, $strZohoUrl);
+//$ch2 = curl_init();
+//curl_setopt($ch2, CURLOPT_HTTPHEADER, false);
+//curl_setopt($ch2, CURLOPT_URL, $strZohoUrl);
 //curl_setopt($ch2, CURLOPT_HEADER, 0);
-curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+//curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 //curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);  
 //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  
 //curl_setopt($ch, CURLOPT_COOKIEJAR,'cookie.txt');  
@@ -68,10 +68,10 @@ curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 //curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
 //curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3"); 
 //curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
-$zohoResponse=curl_exec($ch2); 
+//$zohoResponse=curl_exec($ch2); 
 //Close curl object
-curl_close($ch2);
-
+//curl_close($ch2);
+$zohoResponse=file_get_contents($strZohoUrl);
 //Pass results to the SimpleXMLElement function
 //$xml = new SimpleXMLElement($zohoResponse);
 
