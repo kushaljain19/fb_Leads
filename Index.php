@@ -42,8 +42,8 @@ foreach ( $FieldData as $key=>$val ){
       $description .= $val["name"]."<br/>".$val["values"][0]."<br/>";
    }  
 }
-//print "$name<br/>";
-//print "$email<br/>";
-//print "$phone_number<br/>";
-//print "$city<br/>";
-//print "$description<br/>";
+print "$name <br/>";
+print "$email <br/>";
+print "$phone_number <br/>";
+print "$city <br/>";
+print "$description <br/>";
