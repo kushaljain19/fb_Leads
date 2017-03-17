@@ -32,7 +32,7 @@ foreach ( $FieldData as $key=>$val ){
    {
       $city = $val["values"][0];
    }else{
-      $description .= $val["name"]."<br/>".$val["values"][0]."<br/>";
+      $description .= $val["name"]." ".$val["values"][0]." ";
    }
 }
 
@@ -53,15 +53,11 @@ $FormDetails=json_decode($st,TRUE);
 echo print_r($FormDetails,true);
 $campaign = $FormDetails["name"];
 $strZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/insertRecords";
-$zoho_post_fields="scope=crmapi&newFormat=1&version=2&duplicateCheck=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&xmlData=<Leads><row no='1'><FL val='Last Name'>".$name."</FL><FL val='Email'>".$email."</FL><FL val='City'>".$city."</FL><FL val='Lead Source'>Facebook</FL><FL val='Campaign'>".$campaign."</FL><FL val='Mobile'>".$phone_number."</FL><FL val='Description'>".$description."</FL></row></Leads>";
+$zoho_post_fields="scope=crmapi&newFormat=1&version=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&xmlData=<Leads><row no='1'><FL val='Last Name'>".$name."</FL><FL val='Email'>".$email."</FL><FL val='City'>".$city."</FL><FL val='Lead Source'>Facebook</FL><FL val='Campaign'>".$campaign."</FL><FL val='Mobile'>".$phone_number."</FL><FL val='Description'>".$description."</FL></row></Leads>";
 //print "$strZohoUrl";
 
-//$ZohoHeaders = array("Content-Type:application/xml");
 $ch2 = curl_init();
-//curl_setopt($ch2, CURLOPT_HTTPHEADER, false);
 curl_setopt($ch2, CURLOPT_URL, $strZohoUrl);
-//curl_setopt($ch2, CURLOPT_HEADER, 0);
-//curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch2, CURLOPT_FOLLOWLOCATION, true);  
 curl_setopt($ch2, CURLOPT_TIMEOUT, 60);
 curl_setopt($ch2, CURLOPT_POST, 1);
@@ -69,18 +65,5 @@ curl_setopt($ch2, CURLOPT_SSL_VERIFYPEER, true);
 curl_setopt($ch2, CURLOPT_POSTFIELDS, $zoho_post_fields);
 $zohoResponse=curl_exec($ch2);
 curl_close($ch2);
-//curl_setopt($ch, CURLOPT_COOKIEJAR,'cookie.txt');  
-//curl_setopt($ch, CURLOPT_COOKIEFILE,'cookie.txt');  
-//curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
-//curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3"); 
-//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
-//$zohoResponse=curl_exec($ch2); 
-//Close curl object
-//curl_close($ch2);
-//$zohoResponse=file_get_contents($strZohoUrl);
-//Pass results to the SimpleXMLElement function
-//$xml = new SimpleXMLElement($zohoResponse);
 
-//print_r($xml);
 echo $zohoResponse;
-//echo print_r($ZohoResponse,true);
