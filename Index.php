@@ -80,12 +80,12 @@ echo $UpdateZohoUrl;
 echo $updateZoho_post_fields;
 $ch3 = curl_init();
 curl_setopt($ch3, CURLOPT_URL, $UpdateZohoUrl);
-curl_setopt($ch2, CURLOPT_FOLLOWLOCATION, true);  
-curl_setopt($ch2, CURLOPT_TIMEOUT, 60);
-curl_setopt($ch2, CURLOPT_POST, 1);
-curl_setopt($ch2, CURLOPT_SSL_VERIFYPEER, true);
-curl_setopt($ch2, CURLOPT_POSTFIELDS, $updateZoho_post_fields);
+curl_setopt($ch3, CURLOPT_FOLLOWLOCATION, true);  
+curl_setopt($ch3, CURLOPT_TIMEOUT, 60);
+curl_setopt($ch3, CURLOPT_POST, 1);
+curl_setopt($ch3, CURLOPT_SSL_VERIFYPEER, true);
+curl_setopt($ch3, CURLOPT_POSTFIELDS, $updateZoho_post_fields);
 $UpdateResponse=curl_exec($ch3);
-curl_close($ch2);
+curl_close($ch3);
 echo $UpdateResponse;
 
