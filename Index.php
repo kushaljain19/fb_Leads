@@ -75,7 +75,7 @@ $zohoResponse2=json_decode($zohoResponse,true);
 //echo $zohoResponse2;
 $LeadID =  $zohoResponse2["LeadId"];
 $UpdateZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/updateRecords";
-$updateZoho_post_fields = "scope=crmapi&newFormat=1&version=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&id={$LeadID}&xmlData=<Leads><row no='1'><FL val='Description'>{$description}</FL></row></Leads>";
+$updateZoho_post_fields = "scope=crmapi&newFormat=1&version=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&id={$LeadID}&xmlData=<Leads><row no='1'><FL val='Description'>".urlencode($description)."</FL></row></Leads>";
 echo $UpdateZohoUrl;
 echo $updateZoho_post_fields;
 $ch3 = curl_init();
