@@ -67,8 +67,22 @@ $st=curl_exec($ch);
 $FormDetails=json_decode($st,TRUE);
 
 $campaign = $FormDetails["name"];
+$LeadProduct = "Equity";
+
+if( strpos( $campaign, "Equity" ) !== false ) {
+    $LeadProduct = "Equity";
+}else if( strpos( $campaign, "Mutual" ) !== false ) {
+    $LeadProduct = "Mutual Fund";
+}else if( strpos( $campaign, "Health" ) !== false ) {
+    $LeadProduct = "Health Insurance";
+}else if( strpos( $campaign, "Motor" ) !== false ) {
+    $LeadProduct = "Motor Insurance";
+}else if( strpos( $campaign, "Term" ) !== false ) {
+    $LeadProduct = "Term Insurance";
+}
+
 $strZohoUrl = "api.5paisa.com/crmapi/api/preregister";
-$zoho_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&UrlParam=Description%3D".urlencode($description);
+$zoho_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description);
 $ch2 = curl_init();
 curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true); 
 curl_setopt($ch2, CURLOPT_URL, $strZohoUrl."?".$zoho_post_fields);
