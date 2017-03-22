@@ -41,7 +41,8 @@ foreach ( $FieldData as $key=>$val ){
       $email = $val["values"][0];
    }elseif($val["name"] == "phone_number")
    {
-      $phone_number = substr($val["values"][0],-10);
+      $phone_number = str_replace(' ', '', $val["values"][0]);
+      $phone_number = substr($phone_number,-10);
    }elseif($val["name"] == "city")
    {
       $city = $val["values"][0];
