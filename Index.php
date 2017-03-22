@@ -27,7 +27,8 @@ foreach ( $FieldData as $key=>$val ){
       $email = $val["values"][0];
    }elseif($val["name"] == "phone_number")
    {
-      $phone_number = substr($val["values"][0],-10);
+      $phone_number = str_replace(' ', '', $val["values"][0]);
+      $phone_number = substr($phone_number,-10);
    }elseif($val["name"] == "city")
    {
       $city = $val["values"][0];
@@ -52,11 +53,26 @@ $st=curl_exec($ch);
 $FormDetails=json_decode($st,TRUE);
 //echo print_r($FormDetails,true);
 $campaign = $FormDetails["name"];
+
+$LeadProduct = "Equity";
+
+if( strpos( $campaign, "Equity" ) !== false ) {
+    $LeadProduct = "Equity";
+}else if( strpos( $campaign, "Mutual" ) !== false ) {
+    $LeadProduct = "Mutual Fund";
+}else if( strpos( $campaign, "Health" ) !== false ) {
+    $LeadProduct = "Health Insurance";
+}else if( strpos( $campaign, "Motor" ) !== false ) {
+    $LeadProduct = "Motor Insurance";
+}else if( strpos( $campaign, "Term" ) !== false ) {
+    $LeadProduct = "Term Insurance";
+}
+
 //$strZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/insertRecords";
 $strZohoUrl = "api.5paisa.com/crmapi/api/preregister";
 //$zoho_post_fields="scope=crmapi&newFormat=1&version=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&xmlData=<Leads><row no='1'><FL val='Last Name'>".$name."</FL><FL val='Email'>".$email."</FL><FL val='City'>".$city."</FL><FL val='Lead Source'>Facebook</FL><FL val='Campaign'>".$campaign."</FL><FL val='Mobile'>".$phone_number."</FL><FL val='Description'>".$description."</FL></row></Leads>";
 //$zoho_post_fields="IsReg=N&LName=".$name."&Mobile=".$phone_number."&Email=".$email."&LeadSource=Facebook&LeadCampaign=".$campaign."&UrlParam=Description%3D".$description;
-$zoho_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&UrlParam=Description%3D".urlencode($description);
+$zoho_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description);
 print $strZohoUrl."?".$zoho_post_fields;
 
 $ch2 = curl_init();
