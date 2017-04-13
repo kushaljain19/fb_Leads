@@ -9,14 +9,16 @@ if ($verify_token === 'abc123') {
 
 //Get response of lead realtime
 $input = json_decode(file_get_contents('php://input'), true);
-error_log(print_r($input, true));
+echo file_get_contents('php://input');
 
 
 $leadgen_id = $input["entry"][0]["changes"][0]["value"]["leadgen_id"]; //get lead id
 $form_id = $input["entry"][0]["changes"][0]["value"]["form_id"]; //get form id
 
-error_log(print_r("Lead id="+$leadgen_id, true));
-error_log(print_r("Form id="+$form_id, true));
+$leadiderror = "Lead id="+$leadgen_id;
+$formiderror = "Form id="+$form_id;
+echo $leadiderror;
+echo $formiderror;
 
 //Fetch Lead Data using graph api while accesing the lead id as a node and access token as a parameter(This access token never expires)
 $url = "https://graph.facebook.com/v2.8/{$leadgen_id}?access_token=EAARrtz2GsKUBALd8MakhGAQprYKeucW9nZC1oXbohk1pl8V3TZBP9GAN8VIBeI1NGdPCjyRWnOIGSnBcNh7DlBVGkoGvwOoRuwdmPqhcJEZBzPAJxi65l5LaVNHsOVOler89vXylk6iBahVdFTSFh0np1jHRgrDlzx7p9qZAxgZDZD";
@@ -32,7 +34,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3"); 
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
 $st=curl_exec($ch);
-error_log(print_r("Facebook Response="+$st, true));
+//error_log(print_r("Facebook Response="+$st, true));
 $result=json_decode($st,TRUE);
 $FieldData = $result["field_data"];
 
