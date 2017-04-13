@@ -9,14 +9,14 @@ if ($verify_token === 'abc123') {
 
 //Get response of lead realtime
 $input = json_decode(file_get_contents('php://input'), true);
-error_log("hello, this is a test!");
-
 
 $leadgen_id = $input["entry"][0]["changes"][0]["value"]["leadgen_id"]; //get lead id
 $form_id = $input["entry"][0]["changes"][0]["value"]["form_id"]; //get form id
 
 $leadiderror = "Lead id="+$leadgen_id;
 $formiderror = "Form id="+$form_id;
+error_log($leadiderror);
+error_log("hello, this is a test!");
 echo $leadiderror;
 echo $formiderror;
 
