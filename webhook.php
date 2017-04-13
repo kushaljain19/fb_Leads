@@ -1,12 +1,11 @@
--<?php
--
--//Verify your webhook using $verify_token mentions while create a subscription for the app
--$challenge = $_REQUEST['hub_challenge'];
--$verify_token = $_REQUEST['hub_verify_token'];
--if ($verify_token === 'abc123') {
--  echo $challenge;
--}
--
+<?php
+
+//Verify your webhook using $verify_token mentions while create a subscription for the app
+$challenge = $_REQUEST['hub_challenge'];
+$verify_token = $_REQUEST['hub_verify_token'];
+if ($verify_token === 'abc123') {
+   echo $challenge;
+}
 
 //Get response of lead realtime
 $input = json_decode(file_get_contents('php://input'), true);
@@ -16,7 +15,9 @@ $form_id = $input["entry"][0]["changes"][0]["value"]["form_id"]; //get form id
 
 $leadiderror = "Lead id="+$leadgen_id;
 $formiderror = "Form id="+$form_id;
+
 error_log($leadiderror);
+
 error_log($formiderror);
 
 //Fetch Lead Data using graph api while accesing the lead id as a node and access token as a parameter(This access token never expires)
