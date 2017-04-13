@@ -32,8 +32,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3"); 
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
 $st=curl_exec($ch);
+error_log(print_r("Facebook Response="+$st, true));
 $result=json_decode($st,TRUE);
-error_log(print_r("Facebook Response="+$result, true));
 $FieldData = $result["field_data"];
 
 //Traversing through each field and getting individual values
