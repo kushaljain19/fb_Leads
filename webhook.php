@@ -15,6 +15,8 @@ error_log(print_r($input, true));
 $leadgen_id = $input["entry"][0]["changes"][0]["value"]["leadgen_id"]; //get lead id
 $form_id = $input["entry"][0]["changes"][0]["value"]["form_id"]; //get form id
 
+error_log(print_r("Lead id="+$leadgen_id, true));
+error_log(print_r("Form id="+$form_id, true));
 
 //Fetch Lead Data using graph api while accesing the lead id as a node and access token as a parameter(This access token never expires)
 $url = "https://graph.facebook.com/v2.8/{$leadgen_id}?access_token=EAARrtz2GsKUBALd8MakhGAQprYKeucW9nZC1oXbohk1pl8V3TZBP9GAN8VIBeI1NGdPCjyRWnOIGSnBcNh7DlBVGkoGvwOoRuwdmPqhcJEZBzPAJxi65l5LaVNHsOVOler89vXylk6iBahVdFTSFh0np1jHRgrDlzx7p9qZAxgZDZD";
@@ -31,7 +33,7 @@ curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
 $st=curl_exec($ch);
 $result=json_decode($st,TRUE);
-
+error_log(print_r("Facebook Response="+$result, true));
 $FieldData = $result["field_data"];
 
 //Traversing through each field and getting individual values
