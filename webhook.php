@@ -21,7 +21,7 @@ error_log($leadiderror);
 error_log($formiderror);
 
 //Fetch Lead Data using graph api while accesing the lead id as a node and access token as a parameter(This access token never expires)
-$url = "https://graph.facebook.com/v2.8/{$leadgen_id}?access_token=EAADmDVFtzhgBAFhaMbEa1zTIYEZCgEFnESDLRD2ZCafNCDT2ZCLHFAfnZBEbiCbvEWb6pC9GRJEvBI1TqqWYFCwCprrVQj1IspDTC9rmq1UT6sqIop4De9mxsxa59gDV7ZBgV2cX8paLlmSWpRz8XkpqGSOTSVkssaPrTBxtRVlb0uTf7cYS2BOFKDtdMHkeOzSAUeZCOJYAZDZD";
+$url = "https://graph.facebook.com/v2.8/{$leadgen_id}?access_token="EAADmDVFtzhgBALrymu5simrz3plVvqADh3TON6zWCbb3xnxosA580wrFeQOmZC5jnqGfTrNNZC1MT6cVgZBKQw7wcxNin6lV9jnqsABTkEfUYcVHmhKAmnd3YnwgelmTF7KTfhdfJPNwOXSIzIkJBpjJ53F9Qpwfml0QDIHZCQZDZD"                                                                     
 $headers = array("Content-type: application/json");
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
