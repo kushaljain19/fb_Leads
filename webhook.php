@@ -13,12 +13,8 @@ $input = json_decode(file_get_contents('php://input'), true);
 $leadgen_id = $input["entry"][0]["changes"][0]["value"]["leadgen_id"]; //get lead id
 $form_id = $input["entry"][0]["changes"][0]["value"]["form_id"]; //get form id
 
-$leadiderror = "Lead id="+$leadgen_id;
-$formiderror = "Form id="+$form_id;
-
-error_log($leadiderror);
-
-error_log($formiderror);
+error_log($leadgen_id);
+error_log($form_id);
 
 //Fetch Lead Data using graph api while accesing the lead id as a node and access token as a parameter(This access token never expires)
 $url = "https://graph.facebook.com/v2.8/{$leadgen_id}?access_token=EAADmDVFtzhgBABmCC5FgwbpmldaWRnaxFYMQQuIr4kFP1BgfPvk82qZBsnQZB1avTwOg8Ta1AlCpdHGWgSmYSaaGtXG1ZCiuYuIXZAp1qYCvDlReZA2ZBdeinwSL4M3iTDYIsrYMZAkjqjLgrdvq7OZCpzoN9ZCCiIosZD";
