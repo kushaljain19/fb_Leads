@@ -9,6 +9,11 @@ if ($verify_token === 'abc123') {
    echo $challenge;
 }
 
+error_log("challenge");
+error_log($challenge);
+error_log("verify_token");
+error_log($verify_token);
+
 //Get response of lead realtime
 $input = json_decode(file_get_contents('php://input'), true);
 
