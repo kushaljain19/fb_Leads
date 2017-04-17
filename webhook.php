@@ -73,6 +73,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3"); 
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
 $st=curl_exec($ch); 
+error_log($st);
 $FormDetails=json_decode($st,TRUE);
 
 $campaign = $FormDetails["name"]; //store form name as campaign name
@@ -98,6 +99,7 @@ $ch2 = curl_init();
 curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true); 
 curl_setopt($ch2, CURLOPT_URL, $strCrmApiUrl."?".$crmapi_post_fields);
 $crmApiResponse=curl_exec($ch2);
+error_log($crmApiResponse);
 curl_close($ch2);
 
 $decodedCrmApiResponse=json_decode($crmApiResponse,true);
@@ -115,5 +117,6 @@ curl_setopt($ch3, CURLOPT_POST, 1);
 curl_setopt($ch3, CURLOPT_SSL_VERIFYPEER, true);
 curl_setopt($ch3, CURLOPT_POSTFIELDS, $updateZoho_post_fields);
 $UpdateResponse=curl_exec($ch3);
+error_log($UpdateResponse);
 curl_close($ch3);
 error_log(print_r($zohoResponse, true));
