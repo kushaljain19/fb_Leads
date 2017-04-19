@@ -93,10 +93,8 @@ if( strpos( $campaign, "Equity" ) !== false ) {
 }else if( strpos( $campaign, "Mutual" ) !== false ) {
     $LeadProduct = "Mutual Fund";
 }else if( strpos( $campaign, "health" ) !== false ) {
-   error_log("inside loop 1");
     $LeadProduct = "Health Insurance";
 }else if( strpos( $campaign, "Health" ) !== false ) {
-   error_log("inside loop 2");
     $LeadProduct = "Health Insurance";
 }else if( strpos( $campaign, "motor" ) !== false ) {
     $LeadProduct = "Motor Insurance";
