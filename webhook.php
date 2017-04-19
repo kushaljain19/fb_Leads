@@ -84,6 +84,9 @@ $FormDetails=json_decode($st,TRUE);
 $campaign = $FormDetails["name"]; //store form name as campaign name
 $LeadProduct = "Equity"; //Set default product as Equity
 
+error_log("campaign name");
+error_log($campaign);
+
 //Finding Lead Product from the campign name itself
 if( strpos( $campaign, "Equity" ) !== false ) {
     $LeadProduct = "Equity";
