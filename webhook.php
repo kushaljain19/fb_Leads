@@ -42,7 +42,7 @@ error_log($st);
 $result=json_decode($st,TRUE);
 $FieldData = $result["field_data"];
 error_log("json response");
-error_log($FieldData);
+error_log($result);
 $findHealthInsuranceCover="Health Insurance Cover";
 $findHealthInsuranceFor="Health Insurance";
 $findDateofBirth="date_of_birth";
