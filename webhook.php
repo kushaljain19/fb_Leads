@@ -42,6 +42,12 @@ error_log($st);
 $result=json_decode($st,TRUE);
 $FieldData = $result["field_data"];
 
+$findHealthInsuranceCover="Health Insurance Cover";
+$findHealthInsuranceFor="Health Insurance";
+$findDateofBirth="date_of_birth";
+$findNewToStockMarket="Prev Exp";
+$findInvestmentAmount="Portfolio Size";
+
 //Traversing through each field and getting individual values
 foreach ( $FieldData as $key=>$val ){
    if($val["name"] == "full_name")
@@ -57,11 +63,41 @@ foreach ( $FieldData as $key=>$val ){
    }elseif($val["name"] == "city")
    {
       $city = $val["values"][0];
+   }elseif($val["name"] == "gender")
+   {
+      
+      $gender = $val["values"][0];
+      error_log("gender");
+      error_log($gender);
+   }elseif(strpos($val["name"], $findHealthInsuranceCover)!== false)
+   {
+      $HealthInsuranceCover = $val["values"][0];
+      error_log("$HealthInsuranceCover");
+      error_log($HealthInsuranceCover);
+   }elseif(strpos($val["name"], $findHealthInsuranceFor)!== false)
+   {
+      $HealthInsuranceFor = $val["values"][0];
+      error_log("$HealthInsuranceFor");
+      error_log($HealthInsuranceFor);
+   }elseif(strpos($val["name"], $findDateofBirth)!== false)
+   {
+      $DateofBirth = $val["values"][0];
+      error_log("$DateofBirth");
+      error_log($DateofBirth);
+   }elseif(strpos($val["name"], $findNewToStockMarket)!== false)
+   {
+      $NewToStockMarket = $val["values"][0];
+      error_log("$NewToStockMarket");
+      error_log($NewToStockMarket);
+   }elseif(strpos($val["name"], $findInvestmentAmount)!== false)
+   {
+      $InvestmentAmount = $val["values"][0];
+      error_log("$InvestmentAmount");
+      error_log($InvestmentAmount);
    }else{
       $description .= $val["name"]." ".$val["values"][0]." ";
    }
-}
-
+}  
 
 //Fetching Form Name using Form Id to use as a campaign name
 $FormDetailUrl = "https://graph.facebook.com/v2.8/{$form_id}?access_token=EAADmDVFtzhgBABmCC5FgwbpmldaWRnaxFYMQQuIr4kFP1BgfPvk82qZBsnQZB1avTwOg8Ta1AlCpdHGWgSmYSaaGtXG1ZCiuYuIXZAp1qYCvDlReZA2ZBdeinwSL4M3iTDYIsrYMZAkjqjLgrdvq7OZCpzoN9ZCCiIosZD";
@@ -123,7 +159,7 @@ $LeadID =  $decodedCrmApiResponse["LeadId"]; //LeadId from the CRM API response
 
 //Update the description, to prevent loss when a related lead is created
 $UpdateZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/updateRecords";
-$updateZoho_post_fields = "scope=crmapi&newFormat=1&version=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&id={$LeadID}&xmlData=<Leads><row no='1'><FL val='Description'>".urlencode($description)."</FL></row></Leads>";
+$updateZoho_post_fields = "scope=crmapi&newFormat=1&version=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&id={$LeadID}&xmlData=<Leads><row no='1'><FL val='Description'>".urlencode($description)."</FL><FL val='Gender'>".urlencode($gender)."</FL></row></Leads>";
 $ch3 = curl_init();
 curl_setopt($ch3, CURLOPT_URL, $UpdateZohoUrl);
 curl_setopt($ch3, CURLOPT_FOLLOWLOCATION, true);  
