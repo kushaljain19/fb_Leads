@@ -159,7 +159,7 @@ $decodedCrmApiResponse=json_decode($crmApiResponse,true);
 $LeadID =  $decodedCrmApiResponse["LeadId"]; //LeadId from the CRM API response
 //echo $zohoResponse2;
 
-$GetZohoRecordsUrl="https://crm.zoho.com/crm/private/json/Leads/searchRecords";
+$GetZohoRecordsUrl="https://crm.zoho.com/crm/private/xml/Leads/searchRecords";
 $GetZoho_Records_Get_fields="authtoken=b01ef977ae5d658b4368ebe181cf5bd9&scope=crmapi&criteria=((Email:".urlencode($email).")AND(Mobile:".urlencode($phone_number).")AND(Lead%20Source:Facebook)AND(Campaign:".urlencode($campaign).")AND(Lead%20Product:".urlencode($LeadProduct)."))";
 error_log("get records url");
 error_log($GetZohoRecordsUrl."?".$GetZoho_Records_Get_fields);
