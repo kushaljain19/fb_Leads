@@ -159,23 +159,6 @@ $decodedCrmApiResponse=json_decode($crmApiResponse,true);
 $LeadID =  $decodedCrmApiResponse["LeadId"]; //LeadId from the CRM API response
 //echo $zohoResponse2;
 
-$GetZohoRecordsUrl="https://crm.zoho.com/crm/private/xml/Leads/searchRecords";
-$GetZoho_Records_Get_fields="authtoken=b01ef977ae5d658b4368ebe181cf5bd9&scope=crmapi&criteria=((Email:".urlencode($email).")AND(Mobile:".urlencode($phone_number).")AND(Lead%20Source:Facebook)AND(Campaign:".urlencode($campaign).")AND(Lead%20Product:".urlencode($LeadProduct)."))";
-error_log("get records url");
-error_log($GetZohoRecordsUrl."?".$GetZoho_Records_Get_fields);
-$ch3 = curl_init();
-curl_setopt($ch3, CURLOPT_RETURNTRANSFER, true); 
-curl_setopt($ch3, CURLOPT_URL, $GetZohoRecordsUrl."?".$GetZoho_Records_Get_fields);
-$crmGetRecordsResponse=curl_exec($ch3);
-error_log("New response");
-error_log($crmGetRecordsResponse);
-curl_close($ch3);
-
-$decodedCrmGetRecordsResponse=json_decode($crmGetRecordsResponse,true);
-$NewLeadID =  $decodedCrmGetRecordsResponse["LeadId"]; //LeadId from the CRM API response
-error_log("Record Lead ID");
-error_log($NewLeadID);
-
 //Update the description, to prevent loss when a related lead is created
 $UpdateZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/updateRecords";
 $updateZoho_post_fields = "scope=crmapi&newFormat=1&version=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&id={$LeadID}&xmlData=<Leads><row no='1'><FL val='Description'>".urlencode($description)."</FL><FL val='Gender'>".urlencode($gender)."</FL></row></Leads>";
