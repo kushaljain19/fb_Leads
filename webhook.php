@@ -41,12 +41,12 @@ error_log("first response");
 error_log($st);
 $result=json_decode($st,TRUE);
 $FieldData = $result["field_data"];
-$findHealthInsuranceCover="Health Insurance Cover";
+$findHealthInsuranceCover="Health Cover";
 $findHealthInsuranceFor="Health Insurance";
 $findDateofBirth="date_of_birth";
 $findNewToStockMarket="Prev Exp";
 $findInvestmentAmount="Portfolio Size";
-
+      
 //Traversing through each field and getting individual values
 foreach ( $FieldData as $key=>$val ){
    if($val["name"] == "full_name")
@@ -63,10 +63,9 @@ foreach ( $FieldData as $key=>$val ){
    {
       $city = $val["values"][0];
    }elseif($val["name"] == "gender")
-   {
-      
+   {      
       $gender = $val["values"][0];
-      error_log("gender");
+      error_log("$gender");
       error_log($gender);
    }elseif(strpos($val["name"], $findHealthInsuranceCover)!== false)
    {
@@ -143,7 +142,7 @@ if( strpos( $campaign, "Equity" ) !== false ) {
 
 //Calling CRM API to create Lead
 $strCrmApiUrl = "api.5paisa.com/crmapi/api/preregister";
-$crmapi_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description)."%26Unbounce_ID%3D".urlencode($leadgen_id);
+$crmapi_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description)."%26Unbounce_ID%3D".urlencode($leadgen_id)."&Gender=".urlencode($gender)."&City=".urlencode($city)."&SumAssured=".urlencode($HealthInsuranceCover)."&Individual/Family=".urlencode($HealthInsuranceFor)."&DateOfBirth=".urlencode($DateofBirth)."&NewToMarket=".urlencode($NewToStockMarket)."&ExpectedBusiness=".urlencode($InvestmentAmount);
 $ch2 = curl_init();
 curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true); 
 curl_setopt($ch2, CURLOPT_URL, $strCrmApiUrl."?".$crmapi_post_fields);
