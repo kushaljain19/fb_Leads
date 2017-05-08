@@ -42,7 +42,7 @@ error_log($st);
 $result=json_decode($st,TRUE);
 $FieldData = $result["field_data"];
 $findHealthInsuranceCover="health_insurance_cover";
-$findHealthInsuranceFor="health_insurance";
+$findHealthInsuranceFor="INSURANCE_FOR";
 $findDateofBirth="date_of_birth";
 $findNewToStockMarket="invested";
 $findInvestmentAmount="start_investing";
