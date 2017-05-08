@@ -49,6 +49,8 @@ $findInvestmentAmount="start_investing";
 $upto3lakh="upto";
 $to5lakh="to_5";
 $morethan5lakh="more_than";
+$yes="Yes";
+$no="No";
       
 //Traversing through each field and getting individual values
 foreach ( $FieldData as $key=>$val ){
@@ -97,7 +99,14 @@ foreach ( $FieldData as $key=>$val ){
       error_log($DateofBirth);
    }elseif(strpos($val["name"], $findNewToStockMarket)!== false)
    {
-      $NewToStockMarket = $val["values"][0];
+      $NewToStockMarkettext = $val["values"][0];
+      if(strpos($NewToStockMarkettext, $yes)!== false)
+      {
+         $NewToStockMarket = "No";
+      }elseifstrpos($NewToStockMarkettext, $no)!== false)
+      {
+         $NewToStockMarket = "Yes";
+      }
       error_log("$NewToStockMarket");
       error_log($NewToStockMarket);
    }elseif(strpos($val["name"], $findInvestmentAmount)!== false)
