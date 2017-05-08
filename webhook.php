@@ -118,6 +118,8 @@ $FormDetails=json_decode($st,TRUE);
 $campaign = $FormDetails["name"]; //store form name as campaign name
 $LeadProduct = "Equity"; //Set default product as Equity
 
+$PrefLang = "English"; //Set default Language as English
+
 error_log("campaign name");
 error_log($campaign);
 
@@ -140,9 +142,28 @@ if( strpos( $campaign, "Equity" ) !== false ) {
     $LeadProduct = "Term Insurance";
 }
 
+//Finding Language from the campign name itself
+if( strpos( $campaign, "Hindi" ) !== false ) {
+    $PrefLang = "Hindi";
+}else if( strpos( $campaign, "Marathi" ) !== false ) {
+    $PrefLang = "Marathi";
+}else if( strpos( $campaign, "Bengali" ) !== false ) {
+    $PrefLang = "Bengali";
+}else if( strpos( $campaign, "Kannada" ) !== false ) {
+    $PrefLang = "Kannada";
+}else if( strpos( $campaign, "hindi" ) !== false ) {
+    $PrefLang = "Hindi";
+}else if( strpos( $campaign, "Gujarati" ) !== false ) {
+    $PrefLang = "Gujarati";
+}else if( strpos( $campaign, "BENGALI" ) !== false ) {
+    $PrefLang = "Bengali";
+}else if( strpos( $campaign, "KANNADA" ) !== false ) {
+    $PrefLang = "Kannada";
+}
+
 //Calling CRM API to create Lead
 $strCrmApiUrl = "api.5paisa.com/crmapi/api/preregister";
-$crmapi_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description)."%26Unbounce_ID%3D".urlencode($leadgen_id)."%26Gender%3D".urlencode($gender)."%26City%3D".urlencode($city)."%26SumAssured%3D".urlencode($HealthInsuranceCover)."%26Individual/Family%3D".urlencode($HealthInsuranceFor)."%26DateOfBirth%3D".urlencode($DateofBirth)."%26NewToMarket%3D".urlencode($NewToStockMarket)."%26ExpectedBusiness%3D".urlencode($InvestmentAmount);
+$crmapi_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description)."%26Unbounce_ID%3D".urlencode($leadgen_id)."%26Gender%3D".urlencode($gender)."%26City%3D".urlencode($city)."%26SumAssured%3D".urlencode($HealthInsuranceCover)."%26Individual/Family%3D".urlencode($HealthInsuranceFor)."%26DateOfBirth%3D".urlencode($DateofBirth)."%26NewToMarket%3D".urlencode($NewToStockMarket)."%26ExpectedBusiness%3D".urlencode($InvestmentAmount)."%26PreferredLanguage%3D".urlencode($PrefLang);
 error_log("api url");
 error_log($strCrmApiUrl."?".$crmapi_post_fields);
 $ch2 = curl_init();
