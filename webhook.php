@@ -78,10 +78,10 @@ foreach ( $FieldData as $key=>$val ){
       if(strpos($HealthInsuranceCovertext, $upto3lakh)!== false)
       {
          $HealthInsuranceCover = 300000;
-      }elseifstrpos($HealthInsuranceCovertext, $morethan5lakh)!== false)
+      }elseif(strpos($HealthInsuranceCovertext, $morethan5lakh)!== false)
       {
          $HealthInsuranceCover = 1000000;
-      }elseifstrpos($HealthInsuranceCovertext, $to5lakh)!== false)
+      }elseif(strpos($HealthInsuranceCovertext, $to5lakh)!== false)
       {
          $HealthInsuranceCover = 500000;
       }
@@ -103,7 +103,7 @@ foreach ( $FieldData as $key=>$val ){
       if(strpos($NewToStockMarkettext, $yes)!== false)
       {
          $NewToStockMarket = "No";
-      }elseifstrpos($NewToStockMarkettext, $no)!== false)
+      }elseif(strpos($NewToStockMarkettext, $no)!== false)
       {
          $NewToStockMarket = "Yes";
       }
