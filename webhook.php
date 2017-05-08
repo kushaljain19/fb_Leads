@@ -45,7 +45,7 @@ $findHealthInsuranceCover="Health Cover";
 $findHealthInsuranceFor="Health Insurance";
 $findDateofBirth="date_of_birth";
 $findNewToStockMarket="invested";
-$findInvestmentAmount="start investing";
+$findInvestmentAmount="start_investing";
       
 //Traversing through each field and getting individual values
 foreach ( $FieldData as $key=>$val ){
