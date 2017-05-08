@@ -42,10 +42,13 @@ error_log($st);
 $result=json_decode($st,TRUE);
 $FieldData = $result["field_data"];
 $findHealthInsuranceCover="health_insurance_cover";
-$findHealthInsuranceFor="INSURANCE_FOR";
+$findHealthInsuranceFor="health_insurance";
 $findDateofBirth="date_of_birth";
 $findNewToStockMarket="invested";
 $findInvestmentAmount="start_investing";
+$upto3lakh="upto";
+$to5lakh="to_5";
+$morethan5lakh="more_than";
       
 //Traversing through each field and getting individual values
 foreach ( $FieldData as $key=>$val ){
@@ -69,9 +72,19 @@ foreach ( $FieldData as $key=>$val ){
       error_log($gender);
    }elseif(strpos($val["name"], $findHealthInsuranceCover)!== false)
    {
-      $HealthInsuranceCover = $val["values"][0];
+      $HealthInsuranceCovertext = $val["values"][0];
+      if(strpos($HealthInsuranceCovertext, $upto3lakh)!== false)
+      {
+         $HealthInsuranceCover = 300000;
+      }elseifstrpos($HealthInsuranceCovertext, $morethan5lakh)!== false)
+      {
+         $HealthInsuranceCover = 1000000;
+      }elseifstrpos($HealthInsuranceCovertext, $to5lakh)!== false)
+      {
+         $HealthInsuranceCover = 500000;
+      }
       error_log("$HealthInsuranceCover");
-      error_log($HealthInsuranceCover);
+      error_log($HealthInsuranceCover);      
    }elseif(strpos($val["name"], $findHealthInsuranceFor)!== false)
    {
       $HealthInsuranceFor = $val["values"][0];
