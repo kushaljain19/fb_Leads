@@ -51,6 +51,8 @@ $to5lakh="to_5";
 $morethan5lakh="more_than";
 $yes="Yes";
 $no="No";
+$yessmall="yes";
+$nosmall="no";
       
 //Traversing through each field and getting individual values
 foreach ( $FieldData as $key=>$val ){
@@ -103,7 +105,13 @@ foreach ( $FieldData as $key=>$val ){
       if(strpos($NewToStockMarkettext, $yes)!== false)
       {
          $NewToStockMarket = "No";
+      }elseif(strpos($NewToStockMarkettext, $yessmall)!== false)
+      {
+         $NewToStockMarket = "No";
       }elseif(strpos($NewToStockMarkettext, $no)!== false)
+      {
+         $NewToStockMarket = "Yes";
+      }elseif(strpos($NewToStockMarkettext, $nosmall)!== false)
       {
          $NewToStockMarket = "Yes";
       }
