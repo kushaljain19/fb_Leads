@@ -195,7 +195,12 @@ if( strpos( $campaign, "Hindi" ) !== false ) {
     $PrefLang = "Gujarati";
 }else if( strpos( $campaign, "HINDI" ) !== false ) {
     $PrefLang = "Hindi";
+}else if( strpos( $campaign, "TAMIL" ) !== false ) {
+    $PrefLang = "Tamil";
+}else if( strpos( $campaign, "Tamil" ) !== false ) {
+    $PrefLang = "Tamil";
 }
+
 
 //Calling CRM API to create Lead
 $strCrmApiUrl = "api.5paisa.com/crmapi/api/preregister";
