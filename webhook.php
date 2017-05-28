@@ -2,6 +2,8 @@
 
 error_log("calling once");
 
+error_log("testing deployment");
+
 //Verify your webhook using $verify_token mentions while create a subscription for the app
 $challenge = $_REQUEST['hub_challenge'];
 $verify_token = $_REQUEST['hub_verify_token'];
