@@ -26,7 +26,8 @@ error_log($leadgen_id);
 error_log($form_id);
 
 //Fetch Lead Data using graph api while accesing the lead id as a node and access token as a parameter(This access token never expires)
-$url = "https://graph.facebook.com/v2.8/{$leadgen_id}?access_token=EAADmDVFtzhgBABmCC5FgwbpmldaWRnaxFYMQQuIr4kFP1BgfPvk82qZBsnQZB1avTwOg8Ta1AlCpdHGWgSmYSaaGtXG1ZCiuYuIXZAp1qYCvDlReZA2ZBdeinwSL4M3iTDYIsrYMZAkjqjLgrdvq7OZCpzoN9ZCCiIosZD";
+$url = "https://graph.facebook.com/v2.8/{$leadgen_id}?access_token=EAADmDVFtzhgBANi9ePToQFPL0CNrzDGg24SDtw1YdyqfITXNLtyL4jur6zPN6lKCIeyTu5vY1o40YYRzZCAiLCxKHqkZCm5VHb4noM8wZB51nx92ypfj6LdEb0WyVt9CdD5v4dGILK0C3xydUWlH0Fm1LGI66IZD";
+//EAADmDVFtzhgBANi9ePToQFPL0CNrzDGg24SDtw1YdyqfITXNLtyL4jur6zPN6lKCIeyTu5vY1o40YYRzZCAiLCxKHqkZCm5VHb4noM8wZB51nx92ypfj6LdEb0WyVt9CdD5v4dGILK0C3xydUWlH0Fm1LGI66IZD
 $headers = array("Content-type: application/json");
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -130,7 +131,8 @@ foreach ( $FieldData as $key=>$val ){
 }  
 
 //Fetching Form Name using Form Id to use as a campaign name
-$FormDetailUrl = "https://graph.facebook.com/v2.8/{$form_id}?access_token=EAADmDVFtzhgBABmCC5FgwbpmldaWRnaxFYMQQuIr4kFP1BgfPvk82qZBsnQZB1avTwOg8Ta1AlCpdHGWgSmYSaaGtXG1ZCiuYuIXZAp1qYCvDlReZA2ZBdeinwSL4M3iTDYIsrYMZAkjqjLgrdvq7OZCpzoN9ZCCiIosZD";
+$FormDetailUrl = "https://graph.facebook.com/v2.8/{$form_id}?access_token=EAADmDVFtzhgBANi9ePToQFPL0CNrzDGg24SDtw1YdyqfITXNLtyL4jur6zPN6lKCIeyTu5vY1o40YYRzZCAiLCxKHqkZCm5VHb4noM8wZB51nx92ypfj6LdEb0WyVt9CdD5v4dGILK0C3xydUWlH0Fm1LGI66IZD";
+//EAADmDVFtzhgBANi9ePToQFPL0CNrzDGg24SDtw1YdyqfITXNLtyL4jur6zPN6lKCIeyTu5vY1o40YYRzZCAiLCxKHqkZCm5VHb4noM8wZB51nx92ypfj6LdEb0WyVt9CdD5v4dGILK0C3xydUWlH0Fm1LGI66IZD
 $FormHeaders = array("Content-type: application/json");
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_HTTPHEADER, $FormHeaders);
