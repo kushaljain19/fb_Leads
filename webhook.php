@@ -182,6 +182,10 @@ if( strpos( $campaign, "Equity" ) !== false ) {
     $LeadProduct = "Motor Insurance";
 }else if( strpos( $campaign, "MUTUAL" ) !== false ) {
     $LeadProduct = "Mutual Fund";
+}else if( strpos( $campaign, "health" ) !== false ) {
+    $LeadProduct = "Health Insurance";
+}else if( strpos( $campaign, "Health" ) !== false ) {
+    $LeadProduct = "Health Insurance";
 }
 
 //Finding Language from the campign name itself
