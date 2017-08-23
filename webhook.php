@@ -216,7 +216,15 @@ if( strpos( $campaign, "Hindi" ) !== false ) {
     $PrefLang = "Tamil";
 }else if( strpos( $campaign, "Tamil" ) !== false ) {
     $PrefLang = "Tamil";
+}else if( strpos( $campaign, "TAMIL" ) !== false ) {
+    $PrefLang = "Tamil";
+}else if( strpos( $campaign, "tamil" ) !== false ) {
+    $PrefLang = "Tamil";
+}else if( strpos( $campaign, "kannada" ) !== false ) {
+    $PrefLang = "Kannada";
 }
+
+
 
 
 //Calling CRM API to create Lead
