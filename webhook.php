@@ -46,16 +46,16 @@ error_log($st);
 $result=json_decode($st,TRUE);
 $FieldData = $result["field_data"];
 $findHealthInsuranceCover="health_insurance_cover";
-$Pincode="Pin Code";
-$findHealthInsuranceCover_2="Health Insurance Cover";
+$Pincode="pin_code";
+$findHealthInsuranceCover_2="health_cover";
 $findHealthInsuranceFor="health_insurance";
-$findHealthInsuranceForWhom="For Whom";
+$findHealthInsuranceForWhom="health_insurance_for";
 $findDateofBirth="date_of_birth";
 $findDateofBirth2="Date of birth";
-$EducationalQ="Educational";
-$Profession="Employment";
-$Online="buy things online";
-$Soon="soon would you like to buy";
+$EducationalQ="educational_qualification";
+$Profession="employment_type";
+$Online="day-to-day_stuffs_online";
+$Soon="soon_would_you";
 $findNewToStockMarket="invested";
 $findInvestmentAmount="start_investing";
 $upto3lakh="upto";
@@ -86,9 +86,6 @@ foreach ( $FieldData as $key=>$val ){
    }elseif($val["name"] == "gender")
    {      
       $gender = $val["values"][0];
-   }elseif($val["name"] == "Gender")
-   {      
-      $gender = $val["values"][0];
    }elseif(strpos($val["name"], $findHealthInsuranceCover)!== false)
    {
       $HealthInsuranceCovertext = $val["values"][0];
@@ -114,11 +111,11 @@ foreach ( $FieldData as $key=>$val ){
       {
          $HealthInsuranceCover = 300000;
          error_log($HealthInsuranceCovertext);
-      }elseif(strpos($HealthInsuranceCovertext, $morethan5lakh2)!== false)
+      }elseif(strpos($HealthInsuranceCovertext, $morethan5lakh)!== false)
       {
          $HealthInsuranceCover = 1000000;
          error_log($HealthInsuranceCovertext);
-      }elseif(strpos($HealthInsuranceCovertext, $to5lakh2)!== false)
+      }elseif(strpos($HealthInsuranceCovertext, $to5lakh)!== false)
       {
          $HealthInsuranceCover = 500000;
          error_log($HealthInsuranceCovertext);
