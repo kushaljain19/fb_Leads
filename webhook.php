@@ -92,41 +92,53 @@ foreach ( $FieldData as $key=>$val ){
    }elseif(strpos($val["name"], $findHealthInsuranceCover)!== false)
    {
       $HealthInsuranceCovertext = $val["values"][0];
+      error_log($findHealthInsuranceCover);
       if(strpos($HealthInsuranceCovertext, $upto3lakh)!== false)
       {
          $HealthInsuranceCover = 300000;
+         error_log($HealthInsuranceCovertext);
       }elseif(strpos($HealthInsuranceCovertext, $morethan5lakh)!== false)
       {
          $HealthInsuranceCover = 1000000;
+         error_log($HealthInsuranceCovertext);
       }elseif(strpos($HealthInsuranceCovertext, $to5lakh)!== false)
       {
          $HealthInsuranceCover = 500000;
+         error_log($HealthInsuranceCovertext);
       }
    }elseif(strpos($val["name"], $findHealthInsuranceCover_2)!== false)
    {
       $HealthInsuranceCovertext = $val["values"][0];
+      error_log($findHealthInsuranceCover_2);
       if(strpos($HealthInsuranceCovertext, $upto3lakh)!== false)
       {
          $HealthInsuranceCover = 300000;
+         error_log($HealthInsuranceCovertext);
       }elseif(strpos($HealthInsuranceCovertext, $morethan5lakh2)!== false)
       {
          $HealthInsuranceCover = 1000000;
+         error_log($HealthInsuranceCovertext);
       }elseif(strpos($HealthInsuranceCovertext, $to5lakh2)!== false)
       {
          $HealthInsuranceCover = 500000;
+         error_log($HealthInsuranceCovertext);
       }
    }elseif(strpos($val["name"], $findHealthInsuranceFor)!== false)
    {
       $HealthInsuranceFor = $val["values"][0];
+      error_log($findHealthInsuranceFor);
    }elseif(strpos($val["name"], $findHealthInsuranceForWhom)!== false)
    {
       $HealthInsuranceFor = $val["values"][0];
+      error_log($findHealthInsuranceForWhom);
    }elseif(strpos($val["name"], $findDateofBirth)!== false)
    {
       $DateofBirth = $val["values"][0];
+      error_log($findDateofBirth);
    }elseif(strpos($val["name"], $findDateofBirth2)!== false)
    {
       $DateofBirth = $val["values"][0];
+      error_log($findDateofBirth2);
    }elseif(strpos($val["name"], $findNewToStockMarket)!== false)
    {
       $NewToStockMarkettext = $val["values"][0];
@@ -149,18 +161,23 @@ foreach ( $FieldData as $key=>$val ){
    }elseif(strpos($val["name"], $Pincode)!== false)
    {
       $PincodeValue = $val["values"][0];
+      error_log($Pincode);
    }elseif(strpos($val["name"], $EducationalQ)!== false)
    {
       $Education = $val["values"][0];
+      error_log($EducationalQ);
    }elseif(strpos($val["name"], $Profession)!== false)
    {
       $Professional = $val["values"][0];
+      error_log($Profession);
    }elseif(strpos($val["name"], $Online)!== false)
    {
       $OnlineBuyer = $val["values"][0];
+      error_log($Online);
    }elseif(strpos($val["name"], $Soon)!== false)
    {
       $HowSoon = $val["values"][0];
+      error_log($Soon);
    }else{
       $description .= $val["name"]." ".$val["values"][0]." ";
    }
