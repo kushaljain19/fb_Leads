@@ -46,13 +46,23 @@ error_log($st);
 $result=json_decode($st,TRUE);
 $FieldData = $result["field_data"];
 $findHealthInsuranceCover="health_insurance_cover";
+$Pincode="Pin Code";
+$findHealthInsuranceCover_2="Health Insurance Cover";
 $findHealthInsuranceFor="health_insurance";
+$findHealthInsuranceForWhom="For Whom";
 $findDateofBirth="date_of_birth";
+$findDateofBirth2="Date of birth";
+$EducationalQ="Educational";
+$Profession="Employment";
+$Online="buy things online";
+$Soon="soon would you like to buy";
 $findNewToStockMarket="invested";
 $findInvestmentAmount="start_investing";
 $upto3lakh="upto";
 $to5lakh="to_5";
+$to5lakh2="to 5";
 $morethan5lakh="more_than";
+$morethan5lakh2="more than";
 $yes="Yes";
 $no="No";
 $yessmall="yes";
@@ -76,8 +86,9 @@ foreach ( $FieldData as $key=>$val ){
    }elseif($val["name"] == "gender")
    {      
       $gender = $val["values"][0];
-      error_log("$gender");
-      error_log($gender);
+   }elseif($val["name"] == "Gender")
+   {      
+      $gender = $val["values"][0];
    }elseif(strpos($val["name"], $findHealthInsuranceCover)!== false)
    {
       $HealthInsuranceCovertext = $val["values"][0];
@@ -91,18 +102,31 @@ foreach ( $FieldData as $key=>$val ){
       {
          $HealthInsuranceCover = 500000;
       }
-      error_log("$HealthInsuranceCover");
-      error_log($HealthInsuranceCover);      
+   }elseif(strpos($val["name"], $findHealthInsuranceCover_2)!== false)
+   {
+      $HealthInsuranceCovertext = $val["values"][0];
+      if(strpos($HealthInsuranceCovertext, $upto3lakh)!== false)
+      {
+         $HealthInsuranceCover = 300000;
+      }elseif(strpos($HealthInsuranceCovertext, $morethan5lakh2)!== false)
+      {
+         $HealthInsuranceCover = 1000000;
+      }elseif(strpos($HealthInsuranceCovertext, $to5lakh2)!== false)
+      {
+         $HealthInsuranceCover = 500000;
+      }
    }elseif(strpos($val["name"], $findHealthInsuranceFor)!== false)
    {
       $HealthInsuranceFor = $val["values"][0];
-      error_log("$HealthInsuranceFor");
-      error_log($HealthInsuranceFor);
+   }elseif(strpos($val["name"], $findHealthInsuranceForWhom)!== false)
+   {
+      $HealthInsuranceFor = $val["values"][0];
    }elseif(strpos($val["name"], $findDateofBirth)!== false)
    {
       $DateofBirth = $val["values"][0];
-      error_log("$DateofBirth");
-      error_log($DateofBirth);
+   }elseif(strpos($val["name"], $findDateofBirth2)!== false)
+   {
+      $DateofBirth = $val["values"][0];
    }elseif(strpos($val["name"], $findNewToStockMarket)!== false)
    {
       $NewToStockMarkettext = $val["values"][0];
@@ -119,13 +143,24 @@ foreach ( $FieldData as $key=>$val ){
       {
          $NewToStockMarket = "Yes";
       }
-      error_log("$NewToStockMarket");
-      error_log($NewToStockMarket);
    }elseif(strpos($val["name"], $findInvestmentAmount)!== false)
    {
       $InvestmentAmount = $val["values"][0];
-      error_log("$InvestmentAmount");
-      error_log($InvestmentAmount);
+   }elseif(strpos($val["name"], $Pincode)!== false)
+   {
+      $PincodeValue = $val["values"][0];
+   }elseif(strpos($val["name"], $EducationalQ)!== false)
+   {
+      $Education = $val["values"][0];
+   }elseif(strpos($val["name"], $Profession)!== false)
+   {
+      $Professional = $val["values"][0];
+   }elseif(strpos($val["name"], $Online)!== false)
+   {
+      $OnlineBuyer = $val["values"][0];
+   }elseif(strpos($val["name"], $Soon)!== false)
+   {
+      $HowSoon = $val["values"][0];
    }else{
       $description .= $val["name"]." ".$val["values"][0]." ";
    }
@@ -224,12 +259,9 @@ if( strpos( $campaign, "Hindi" ) !== false ) {
     $PrefLang = "Kannada";
 }
 
-
-
-
 //Calling CRM API to create Lead
 $strCrmApiUrl = "api.5paisa.com/crmapi/api/preregister";
-$crmapi_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description)."%26Unbounce_ID%3D".urlencode($leadgen_id)."%26Gender%3D".urlencode($gender)."%26City%3D".urlencode($city)."%26SumAssured%3D".urlencode($HealthInsuranceCover)."%26Individual/Family%3D".urlencode($HealthInsuranceFor)."%26DateOfBirth%3D".urlencode($DateofBirth)."%26NewToMarket%3D".urlencode($NewToStockMarket)."%26ExpectedBusiness%3D".urlencode($InvestmentAmount)."%26PreferredLanguage%3D".urlencode($PrefLang);
+$crmapi_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description)."%26Unbounce_ID%3D".urlencode($leadgen_id)."%26Gender%3D".urlencode($gender)."%26City%3D".urlencode($city)."%26SumAssured%3D".urlencode($HealthInsuranceCover)."%26Individual/Family%3D".urlencode($HealthInsuranceFor)."%26DateOfBirth%3D".urlencode($DateofBirth)."%26NewToMarket%3D".urlencode($NewToStockMarket)."%26ExpectedBusiness%3D".urlencode($InvestmentAmount)."%26PreferredLanguage%3D".urlencode($PrefLang)."%26Pincode%3D".urlencode($PincodeValue)."%26Education%3D".urlencode($Education)."%26Profession%3D".urlencode($Professional)."%26OnlineBuyer%3D".urlencode($OnlineBuyer)."%26HowSoon%3D".urlencode($HowSoon);
 error_log("api url");
 error_log($strCrmApiUrl."?".$crmapi_post_fields);
 $ch2 = curl_init();
