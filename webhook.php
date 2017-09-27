@@ -179,7 +179,8 @@ foreach ( $FieldData as $key=>$val ){
       $description .= $val["name"]." ".$val["values"][0]." ";
    }
 }  
-
+error_log("mobile");
+error_log($phone_number );
  if($phone_number == "9742934449"){
     $url = 'https://www.5paisainsurance.com/WCFResult/PolicyResult.svc/WebJson/GetQuoteByLead';
 $fields = array(
@@ -206,6 +207,8 @@ curl_setopt($ch,CURLOPT_POST, count($fields));
 curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
 //execute post
 $result = curl_exec($ch);
+error_log("$result");
+error_log($result);
 //close connection
 curl_close($ch);
  }
