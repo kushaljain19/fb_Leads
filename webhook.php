@@ -180,11 +180,7 @@ foreach ( $FieldData as $key=>$val ){
    }
 }  
 
-$dummycheck = "9742934449";
-error_log("mobile");
-error_log($phone_number );
- if(strpos($phone_number, $dummycheck)!== false){
-    $url = 'https://www.5paisainsurance.com/WCFResult/PolicyResult.svc/WebJson/GetQuoteByLead';
+$url = 'https://www.5paisainsurance.com/WCFResult/PolicyResult.svc/WebJson/GetQuoteByLead';
 $fields = array(
 	'sumInsured' => urlencode($_POST['3 To 5 Lakh Rupees']),
 	'insuredMember' => urlencode($_POST['Entire Family']),
@@ -213,7 +209,7 @@ error_log("$result");
 error_log($result);
 //close connection
 curl_close($ch);
- }
+
 
 //Fetching Form Name using Form Id to use as a campaign name
 $FormDetailUrl = "https://graph.facebook.com/v2.8/{$form_id}?access_token=EAADmDVFtzhgBANi9ePToQFPL0CNrzDGg24SDtw1YdyqfITXNLtyL4jur6zPN6lKCIeyTu5vY1o40YYRzZCAiLCxKHqkZCm5VHb4noM8wZB51nx92ypfj6LdEb0WyVt9CdD5v4dGILK0C3xydUWlH0Fm1LGI66IZD";
