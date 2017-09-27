@@ -181,7 +181,7 @@ foreach ( $FieldData as $key=>$val ){
 }  
 
 error_log("result:");
-$url = 'https://www.5paisainsurance.com/WCFResult/PolicyResult.svc/WebJson/GetQuoteByLead';
+$url = "https://www.5paisainsurance.com/WCFResult/PolicyResult.svc/WebJson/GetQuoteByLead";
 error_log("result1:");
 $fields = array(
 	'sumInsured' => urlencode($_POST['3 To 5 Lakh Rupees']),
