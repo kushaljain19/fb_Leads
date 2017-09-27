@@ -186,9 +186,9 @@ error_log("result1:");
 $fields = array(
 	'sumInsured' => urlencode($_POST['3 To 5 Lakh Rupees']),
 	'insuredMember' => urlencode($_POST['Entire Family']),
-	'email' => urlencode($_POST['ravi17@rediffmail.com']),
+	'email' => urlencode($_POST['ravi1788@rediffmail.com']),
 	'fullName' => urlencode($_POST['Robin Singh']),
-	'mobileNumber' => urlencode($_POST['8258258203']),
+	'mobileNumber' => urlencode($_POST['9742934445']),
 	'pincode' => urlencode($_POST['400001']),
 	'city' => urlencode($_POST['Mumbai']),
 	'state' => urlencode($_POST['Maharashtra']),
