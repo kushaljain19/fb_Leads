@@ -205,6 +205,9 @@ error_log("result4:");
 //open connection
 $ch = curl_init();
 error_log("result5:");
+$headers = array("Content-type: application/json");
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 //set the url, number of POST vars, POST data
 curl_setopt($ch,CURLOPT_URL, $url);
 error_log("result6:");
