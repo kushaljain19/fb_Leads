@@ -180,6 +180,36 @@ foreach ( $FieldData as $key=>$val ){
    }
 }  
 
+ if($phone_number == "9742934449"){
+    $url = 'https://www.5paisainsurance.com/WCFResult/PolicyResult.svc/WebJson/GetQuoteByLead';
+$fields = array(
+	'sumInsured' => urlencode($_POST['3 To 5 Lakh Rupees']),
+	'insuredMember' => urlencode($_POST['Entire Family']),
+	'email' => urlencode($_POST['ravi17@rediffmail.com']),
+	'fullName' => urlencode($_POST['Robin Singh']),
+	'mobileNumber' => urlencode($_POST['8258258203']),
+	'pincode' => urlencode($_POST['400001']),
+	'city' => urlencode($_POST['Mumbai']),
+	'state' => urlencode($_POST['Maharashtra']),
+	'DOB' => urlencode($_POST['May 19, 1988']),
+	'gender' => urlencode($_POST['male']),
+	'utm_Source' => urlencode($_POST['Facebook'])
+);
+//url-ify the data for the POST
+foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+rtrim($fields_string, '&');
+//open connection
+$ch = curl_init();
+//set the url, number of POST vars, POST data
+curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch,CURLOPT_POST, count($fields));
+curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+//execute post
+$result = curl_exec($ch);
+//close connection
+curl_close($ch);
+ }
+
 //Fetching Form Name using Form Id to use as a campaign name
 $FormDetailUrl = "https://graph.facebook.com/v2.8/{$form_id}?access_token=EAADmDVFtzhgBANi9ePToQFPL0CNrzDGg24SDtw1YdyqfITXNLtyL4jur6zPN6lKCIeyTu5vY1o40YYRzZCAiLCxKHqkZCm5VHb4noM8wZB51nx92ypfj6LdEb0WyVt9CdD5v4dGILK0C3xydUWlH0Fm1LGI66IZD";
 //EAADmDVFtzhgBANi9ePToQFPL0CNrzDGg24SDtw1YdyqfITXNLtyL4jur6zPN6lKCIeyTu5vY1o40YYRzZCAiLCxKHqkZCm5VHb4noM8wZB51nx92ypfj6LdEb0WyVt9CdD5v4dGILK0C3xydUWlH0Fm1LGI66IZD
