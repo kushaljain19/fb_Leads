@@ -215,7 +215,7 @@ error_log("result8:");
 //execute post
 $result = curl_exec($ch);
 error_log("result9:");
-error_log($result10);
+error_log($result);
 //close connection
 curl_close($ch);
 error_log("result11:");
