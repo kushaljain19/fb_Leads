@@ -179,9 +179,11 @@ foreach ( $FieldData as $key=>$val ){
       $description .= $val["name"]." ".$val["values"][0]." ";
    }
 }  
+
+$dummycheck = "9742934449";
 error_log("mobile");
 error_log($phone_number );
- if($phone_number == 9742934449){
+ if(strpos($phone_number, $dummycheck)!== false){
     $url = 'https://www.5paisainsurance.com/WCFResult/PolicyResult.svc/WebJson/GetQuoteByLead';
 $fields = array(
 	'sumInsured' => urlencode($_POST['3 To 5 Lakh Rupees']),
