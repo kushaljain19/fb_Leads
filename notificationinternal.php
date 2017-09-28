@@ -8,4 +8,4 @@ curl_setopt($ch, CURLOPT_URL, $url);
 $st=curl_exec($ch);
 error_log("first response");
 error_log($st);
->
+?>
