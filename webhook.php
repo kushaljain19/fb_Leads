@@ -61,7 +61,7 @@ $findNewToStockMarket="invested";
 $findInvestmentAmount="start_investing";
 $upto3lakh="upto";
 $to5lakh="to_5";
-$to5lakh2="to 5";
+$to5lakh2="to_rs_5";
 $morethan5lakh="more_than";
 $morethan5lakh2="more than";
 $yes="Yes";
@@ -94,15 +94,15 @@ foreach ( $FieldData as $key=>$val ){
    {
       $HealthInsuranceCovertext = $val["values"][0];
       error_log($findHealthInsuranceCover);
-      if(strpos($HealthInsuranceCovertext, $upto3lakh)!== false)
+      if((strpos($HealthInsuranceCovertext, $upto3lakh)!== false) ||(strpos($HealthInsuranceCovertext, $upto3lakh)!== false))
       {
          $HealthInsuranceCover = 'Up To Rs 3 Lakh';
          error_log($HealthInsuranceCovertext);
-      }elseif(strpos($HealthInsuranceCovertext, $morethan5lakh)!== false)
+      }elseif((strpos($HealthInsuranceCovertext, $morethan5lakh)!== false) || (strpos($HealthInsuranceCovertext, $morethan5lakh2)!== false))
       {
          $HealthInsuranceCover = 'More Than Rs 5 Lakh';
          error_log($HealthInsuranceCovertext);
-      }elseif(strpos($HealthInsuranceCovertext, $to5lakh)!== false)
+      }elseif((strpos($HealthInsuranceCovertext, $to5lakh)!== false) || (strpos($HealthInsuranceCovertext, $to5lakh2)!== false))
       {
          $HealthInsuranceCover = '3 To 5 Lakh Rupees';
          error_log($HealthInsuranceCovertext);
