@@ -213,7 +213,7 @@ error_log("result8:");
 $result = curl_exec($ch);
 error_log("result9:");
 error_log($result);
-$responseData1 = json_decode($result, TRUE);
+$responseData1 = new SimpleXMLElement($result);
 //close connection
 curl_close($ch);
 error_log($responseData1);
