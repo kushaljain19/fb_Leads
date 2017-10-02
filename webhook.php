@@ -184,36 +184,30 @@ error_log("result:");
 $url = "https://www.5paisainsurance.com/WCFResult/PolicyResult.svc/WebJson/GetQuoteByLead";
 error_log("result1:");
 $fields = array(
-	'sumInsured' => urlencode($_POST['3 To 5 Lakh Rupees']),
-	'insuredMember' => urlencode($_POST['Entire Family']),
-	'email' => urlencode($_POST['ravi1788@rediffmail.com']),
-	'fullName' => urlencode($_POST['Robin Singh']),
-	'mobileNumber' => urlencode($_POST['9742934445']),
-	'pincode' => urlencode($_POST['400001']),
-	'city' => urlencode($_POST['Mumbai']),
-	'state' => urlencode($_POST['Maharashtra']),
-	'DOB' => urlencode($_POST['May 19, 1988']),
-	'gender' => urlencode($_POST['male']),
-	'utm_Source' => urlencode($_POST['Facebook'])
+'sumInsured' => '3 To 5 Lakh Rupees',
+'insuredMember' => 'Entire Family',
+'email' => 'ravi1788@rediffmail.com',
+'fullName' => 'Robin Singh',
+'mobileNumber' => '9742934445','pincode' => '400001','city' => 'Mumbai',
+'state' => 'Maharashtra','DOB' => 'May 19, 1988','gender' => 'male','utm_Source' => 'Facebook'
 );
 error_log("result2:");
 //url-ify the data for the POST
-foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+//foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 error_log("result3:");
-rtrim($fields_string, '&');
+//rtrim($fields_string, '&');
 error_log("result4:");
 //open connection
-$ch = curl_init();
-error_log("result5:");
-$headers = array("Content-type: application/json");
+$headers = array('Content-type: application/json');
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 //set the url, number of POST vars, POST data
 curl_setopt($ch,CURLOPT_URL, $url);
 error_log("result6:");
-curl_setopt($ch,CURLOPT_POST, count($fields));
+curl_setopt($ch,CURLOPT_POST, 1);
 error_log("result7:");
-curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+curl_setopt($ch,CURLOPT_POSTFIELDS, json_encode($fields));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 error_log("result8:");
 //execute post
 $result = curl_exec($ch);
@@ -222,7 +216,6 @@ error_log($result);
 //close connection
 curl_close($ch);
 error_log("result11:");
-
 
 //Fetching Form Name using Form Id to use as a campaign name
 $FormDetailUrl = "https://graph.facebook.com/v2.8/{$form_id}?access_token=EAADmDVFtzhgBANi9ePToQFPL0CNrzDGg24SDtw1YdyqfITXNLtyL4jur6zPN6lKCIeyTu5vY1o40YYRzZCAiLCxKHqkZCm5VHb4noM8wZB51nx92ypfj6LdEb0WyVt9CdD5v4dGILK0C3xydUWlH0Fm1LGI66IZD";
