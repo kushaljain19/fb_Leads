@@ -265,9 +265,9 @@ if( strpos( $campaign, "Hindi" ) !== false ) {
    $fields = array(
       'sumInsured' => $HealthInsuranceCover,
       'insuredMember' => $HealthInsuranceFor,
-      'email' => $email,
+      'email' => 'revokedlord@gmail.com'/*$email*/,
       'fullName' => $name,
-      'mobileNumber' => $phone_number,
+      'mobileNumber' => '9742934449'/*$phone_number*/,
       'pincode' => $PincodeValue,
       'city' => $city,
       'state' => $state,
@@ -279,7 +279,7 @@ if( strpos( $campaign, "Hindi" ) !== false ) {
 //foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 //rtrim($fields_string, '&');
 //open connection
-   error_log($fields);
+   error_log(implode(',', $fields));
    $headers = array('Content-type: application/json');
    $ch = curl_init();
    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
