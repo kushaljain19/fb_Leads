@@ -213,8 +213,10 @@ error_log("result8:");
 $result = curl_exec($ch);
 error_log("result9:");
 error_log($result);
+$responseData1 = json_decode($result, TRUE);
 //close connection
 curl_close($ch);
+error_log($responseData1);
 error_log("result11:");
 
 //Fetching Form Name using Form Id to use as a campaign name
