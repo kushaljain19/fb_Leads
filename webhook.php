@@ -47,6 +47,7 @@ $result=json_decode($st,TRUE);
 $FieldData = $result["field_data"];
 $findHealthInsuranceCover="health_insurance_cover";
 $Pincode="pin_code";
+$Pincode2="post_code";
 $findHealthInsuranceCover_2="health_cover";
 $findHealthInsuranceFor="health_insurance";
 $findHealthInsuranceForWhom="health_insurance_for";
@@ -109,10 +110,12 @@ foreach ( $FieldData as $key=>$val ){
    }elseif(strpos($val["name"], $findHealthInsuranceFor)!== false)
    {
       $HealthInsuranceFor = $val["values"][0];
+      error_log("$findHealthInsuranceFor");
       error_log($findHealthInsuranceFor);
    }elseif(strpos($val["name"], $findHealthInsuranceForWhom)!== false)
    {
       $HealthInsuranceFor = $val["values"][0];
+      error_log("$findHealthInsuranceForWhom");
       error_log($findHealthInsuranceForWhom);
    }elseif(strpos($val["name"], $findDateofBirth)!== false)
    {
@@ -142,9 +145,13 @@ foreach ( $FieldData as $key=>$val ){
    {
       $InvestmentAmount = $val["values"][0];
    }elseif(strpos($val["name"], $Pincode)!== false)
-   {
+   {      
       $PincodeValue = $val["values"][0];
       error_log($Pincode);
+   }elseif(strpos($val["name"], $Pincode2)!== false)
+   {      
+      $PincodeValue = $val["values"][0];
+      error_log($Pincode2);
    }elseif(strpos($val["name"], $EducationalQ)!== false)
    {
       $Education = $val["values"][0];
