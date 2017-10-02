@@ -83,6 +83,9 @@ foreach ( $FieldData as $key=>$val ){
    }elseif($val["name"] == "city")
    {
       $city = $val["values"][0];
+   }elseif($val["name"] == "state")
+   {      
+      $state = $val["values"][0];
    }elseif($val["name"] == "gender")
    {      
       $gender = $val["values"][0];
@@ -92,32 +95,15 @@ foreach ( $FieldData as $key=>$val ){
       error_log($findHealthInsuranceCover);
       if(strpos($HealthInsuranceCovertext, $upto3lakh)!== false)
       {
-         $HealthInsuranceCover = 300000;
+         $HealthInsuranceCover = 'Up To Rs 3 Lakh';
          error_log($HealthInsuranceCovertext);
       }elseif(strpos($HealthInsuranceCovertext, $morethan5lakh)!== false)
       {
-         $HealthInsuranceCover = 1000000;
+         $HealthInsuranceCover = 'More Than Rs 5 Lakh';
          error_log($HealthInsuranceCovertext);
       }elseif(strpos($HealthInsuranceCovertext, $to5lakh)!== false)
       {
-         $HealthInsuranceCover = 500000;
-         error_log($HealthInsuranceCovertext);
-      }
-   }elseif(strpos($val["name"], $findHealthInsuranceCover_2)!== false)
-   {
-      $HealthInsuranceCovertext = $val["values"][0];
-      error_log($findHealthInsuranceCover_2);
-      if(strpos($HealthInsuranceCovertext, $upto3lakh)!== false)
-      {
-         $HealthInsuranceCover = 300000;
-         error_log($HealthInsuranceCovertext);
-      }elseif(strpos($HealthInsuranceCovertext, $morethan5lakh)!== false)
-      {
-         $HealthInsuranceCover = 1000000;
-         error_log($HealthInsuranceCovertext);
-      }elseif(strpos($HealthInsuranceCovertext, $to5lakh)!== false)
-      {
-         $HealthInsuranceCover = 500000;
+         $HealthInsuranceCover = '3 To 5 Lakh Rupees';
          error_log($HealthInsuranceCovertext);
       }
    }elseif(strpos($val["name"], $findHealthInsuranceFor)!== false)
@@ -179,45 +165,6 @@ foreach ( $FieldData as $key=>$val ){
       $description .= $val["name"]." ".$val["values"][0]." ";
    }
 }  
-
-error_log("result:");
-$url = "https://www.5paisainsurance.com/WCFResult/PolicyResult.svc/WebJson/GetQuoteByLead";
-error_log("result1:");
-$fields = array(
-'sumInsured' => '3 To 5 Lakh Rupees',
-'insuredMember' => 'Entire Family',
-'email' => 'ravi1788@rediffmail.com',
-'fullName' => 'Robin Singh',
-'mobileNumber' => '9742934445','pincode' => '400001','city' => 'Mumbai',
-'state' => 'Maharashtra','DOB' => 'May 19, 1988','gender' => 'male','utm_Source' => 'Facebook'
-);
-error_log("result2:");
-//url-ify the data for the POST
-//foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
-error_log("result3:");
-//rtrim($fields_string, '&');
-error_log("result4:");
-//open connection
-$headers = array('Content-type: application/json');
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-//set the url, number of POST vars, POST data
-curl_setopt($ch,CURLOPT_URL, $url);
-error_log("result6:");
-curl_setopt($ch,CURLOPT_POST, 1);
-error_log("result7:");
-curl_setopt($ch,CURLOPT_POSTFIELDS, json_encode($fields));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-error_log("result8:");
-//execute post
-$result = curl_exec($ch);
-error_log("result9:");
-error_log($result);
-$responseData1 = new SimpleXMLElement($result);
-//close connection
-curl_close($ch);
-error_log($responseData1);
-error_log("result11:");
 
 //Fetching Form Name using Form Id to use as a campaign name
 $FormDetailUrl = "https://graph.facebook.com/v2.8/{$form_id}?access_token=EAADmDVFtzhgBANi9ePToQFPL0CNrzDGg24SDtw1YdyqfITXNLtyL4jur6zPN6lKCIeyTu5vY1o40YYRzZCAiLCxKHqkZCm5VHb4noM8wZB51nx92ypfj6LdEb0WyVt9CdD5v4dGILK0C3xydUWlH0Fm1LGI66IZD";
@@ -312,35 +259,57 @@ if( strpos( $campaign, "Hindi" ) !== false ) {
     $PrefLang = "Kannada";
 }
 
-//Calling CRM API to create Lead
-$strCrmApiUrl = "api.5paisa.com/crmapi/api/preregister";
-$crmapi_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description)."%26Unbounce_ID%3D".urlencode($leadgen_id)."%26Gender%3D".urlencode($gender)."%26City%3D".urlencode($city)."%26SumAssured%3D".urlencode($HealthInsuranceCover)."%26Individual/Family%3D".urlencode($HealthInsuranceFor)."%26DateOfBirth%3D".urlencode($DateofBirth)."%26NewToMarket%3D".urlencode($NewToStockMarket)."%26ExpectedBusiness%3D".urlencode($InvestmentAmount)."%26PreferredLanguage%3D".urlencode($PrefLang)."%26Pincode%3D".urlencode($PincodeValue)."%26Education%3D".urlencode($Education)."%26Profession%3D".urlencode($Professional)."%26OnlineBuyer%3D".urlencode($OnlineBuyer)."%26HowSoon%3D".urlencode($HowSoon);
-error_log("api url");
-error_log($strCrmApiUrl."?".$crmapi_post_fields);
-$ch2 = curl_init();
-curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true); 
-curl_setopt($ch2, CURLOPT_URL, $strCrmApiUrl."?".$crmapi_post_fields);
-$crmApiResponse=curl_exec($ch2);
-error_log("third response");
-error_log($crmApiResponse);
-curl_close($ch2);
-
-$decodedCrmApiResponse=json_decode($crmApiResponse,true);
-$LeadID =  $decodedCrmApiResponse["LeadId"]; //LeadId from the CRM API response
-//echo $zohoResponse2;
-
-//Update the description, to prevent loss when a related lead is created
-$UpdateZohoUrl = "https://crm.zoho.com/crm/private/xml/Leads/updateRecords";
-$updateZoho_post_fields = "scope=crmapi&newFormat=1&version=2&wfTrigger=true&authtoken=b01ef977ae5d658b4368ebe181cf5bd9&id={$LeadID}&xmlData=<Leads><row no='1'><FL val='Description'>".urlencode($description)."</FL><FL val='Gender'>".urlencode($gender)."</FL></row></Leads>";
-$ch3 = curl_init();
-curl_setopt($ch3, CURLOPT_URL, $UpdateZohoUrl);
-curl_setopt($ch3, CURLOPT_FOLLOWLOCATION, true);  
-curl_setopt($ch3, CURLOPT_TIMEOUT, 60);
-curl_setopt($ch3, CURLOPT_POST, 1);
-curl_setopt($ch3, CURLOPT_SSL_VERIFYPEER, true);
-curl_setopt($ch3, CURLOPT_POSTFIELDS, $updateZoho_post_fields);
-$UpdateResponse=curl_exec($ch3);
-error_log("fourth response");
-error_log($UpdateResponse);
-curl_close($ch3);
-error_log(print_r($zohoResponse, true));
+//if(strpos($LeadProduct, "Health" ) !== false){
+   error_log("Inside Health API");
+   $url = "https://www.5paisainsurance.com/WCFResult/PolicyResult.svc/WebJson/GetQuoteByLead";
+   $fields = array(
+      'sumInsured' => $HealthInsuranceCover,
+      'insuredMember' => $HealthInsuranceFor,
+      'email' => $email,
+      'fullName' => $name,
+      'mobileNumber' => $phone_number,
+      'pincode' => $PincodeValue,
+      'city' => $city,
+      'state' => $state,
+      'DOB' => $DateofBirth,
+      'gender' => $gender,
+      'utm_Source' => 'Facebook'
+   );
+//url-ify the data for the POST
+//foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+//rtrim($fields_string, '&');
+//open connection
+   error_log($fields);
+   $headers = array('Content-type: application/json');
+   $ch = curl_init();
+   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+//set the url, number of POST vars, POST data
+   curl_setopt($ch,CURLOPT_URL, $url);
+   curl_setopt($ch,CURLOPT_POST, 1);
+   curl_setopt($ch,CURLOPT_POSTFIELDS, json_encode($fields));
+   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//execute post
+   $result = curl_exec($ch);
+   error_log("result9:");
+   error_log($result);
+   $responseData1 = new SimpleXMLElement($result);
+//close connection
+   curl_close($ch);
+   error_log("result11:");
+   error_log($responseData1);
+//}else{
+   //Calling CRM API to create Lead
+   $strCrmApiUrl = "api.5paisa.com/crmapi/api/preregister";
+   $crmapi_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description)."%26Unbounce_ID%3D".urlencode($leadgen_id)."%26Gender%3D".urlencode($gender)."%26City%3D".urlencode($city)."%26State%3D".urlencode($state)."%26SumAssured%3D".urlencode($HealthInsuranceCover)."%26Individual/Family%3D".urlencode($HealthInsuranceFor)."%26DateOfBirth%3D".urlencode($DateofBirth)."%26NewToMarket%3D".urlencode($NewToStockMarket)."%26ExpectedBusiness%3D".urlencode($InvestmentAmount)."%26PreferredLanguage%3D".urlencode($PrefLang)."%26Pincode%3D".urlencode($PincodeValue)."%26Education%3D".urlencode($Education)."%26Profession%3D".urlencode($Professional)."%26OnlineBuyer%3D".urlencode($OnlineBuyer)."%26HowSoon%3D".urlencode($HowSoon);
+   error_log("api url");
+   error_log($strCrmApiUrl."?".$crmapi_post_fields);
+   $ch2 = curl_init();
+   curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true); 
+   curl_setopt($ch2, CURLOPT_URL, $strCrmApiUrl."?".$crmapi_post_fields);
+   $crmApiResponse=curl_exec($ch2);
+   error_log("third response");
+   error_log($crmApiResponse);
+   curl_close($ch2);
+   $decodedCrmApiResponse=json_decode($crmApiResponse,true);
+   $LeadID =  $decodedCrmApiResponse["LeadId"]; //LeadId from the CRM API response   
+//}
