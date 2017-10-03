@@ -264,6 +264,12 @@ if( strpos( $campaign, "Hindi" ) !== false ) {
     $PrefLang = "Tamil";
 }else if( strpos( $campaign, "kannada" ) !== false ) {
     $PrefLang = "Kannada";
+}else if( strpos( $campaign, "Telugu" ) !== false ) {
+    $PrefLang = "Telugu";
+}else if( strpos( $campaign, "telugu" ) !== false ) {
+    $PrefLang = "Telugu";
+}else if( strpos( $campaign, "TELUGU" ) !== false ) {
+    $PrefLang = "Telugu";
 }
 
 if(strpos($LeadProduct, "Health" ) !== false){
