@@ -316,13 +316,13 @@ if(strpos($LeadProduct, "Health" ) !== false){
    $crmapi_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description)."%26Unbounce_ID%3D".urlencode($leadgen_id)."%26Gender%3D".urlencode($gender)."%26City%3D".urlencode($city)."%26State%3D".urlencode($state)."%26SumAssured%3D".urlencode($HealthInsuranceCover)."%26Individual/Family%3D".urlencode($HealthInsuranceFor)."%26DateOfBirth%3D".urlencode($DateofBirth)."%26NewToMarket%3D".urlencode($NewToStockMarket)."%26ExpectedBusiness%3D".urlencode($InvestmentAmount)."%26PreferredLanguage%3D".urlencode($PrefLang)."%26Pincode%3D".urlencode($PincodeValue)."%26Education%3D".urlencode($Education)."%26Profession%3D".urlencode($Professional)."%26OnlineBuyer%3D".urlencode($OnlineBuyer)."%26HowSoon%3D".urlencode($HowSoon);
    error_log("api url");
    error_log($strCrmApiUrl."?".$crmapi_post_fields);
-   $ch2 = curl_init();
-   curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true); 
-   curl_setopt($ch2, CURLOPT_URL, $strCrmApiUrl."?".$crmapi_post_fields);
-   $crmApiResponse=curl_exec($ch2);
-   error_log("third response");
-   error_log($crmApiResponse);
-   curl_close($ch2);
-   $decodedCrmApiResponse=json_decode($crmApiResponse,true);
-   $LeadID =  $decodedCrmApiResponse["LeadId"]; //LeadId from the CRM API response   
+   //$ch2 = curl_init();
+   //curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true); 
+   //curl_setopt($ch2, CURLOPT_URL, $strCrmApiUrl."?".$crmapi_post_fields);
+   //$crmApiResponse=curl_exec($ch2);
+   //error_log("third response");
+   //error_log($crmApiResponse);
+   //curl_close($ch2);
+   //$decodedCrmApiResponse=json_decode($crmApiResponse,true);
+   //$LeadID =  $decodedCrmApiResponse["LeadId"]; //LeadId from the CRM API response   
 }
