@@ -68,7 +68,7 @@ $yes="Yes";
 $no="No";
 $yessmall="yes";
 $nosmall="no";
-$AlternatePhoneNumber="Phone_Number_Alternate";
+$AlternatePhoneNumber="_phone_number_alternate";
 $AlternateNumber="";
       
 //Traversing through each field and getting individual values
