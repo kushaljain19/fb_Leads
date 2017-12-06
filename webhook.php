@@ -300,23 +300,6 @@ if(strpos($LeadProduct, "Health" ) !== false){
 //rtrim($fields_string, '&');
 //open connection
    error_log(implode(',', $fields));
-   $headers = array('Content-type: application/json');
-   $ch = curl_init();
-   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-//set the url, number of POST vars, POST data
-   curl_setopt($ch,CURLOPT_URL, $url);
-   curl_setopt($ch,CURLOPT_POST, 1);
-   curl_setopt($ch,CURLOPT_POSTFIELDS, json_encode($fields));
-   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-//execute post
-   $result = curl_exec($ch);
-   error_log("result9:");
-   error_log($result);
-   $responseData1 = new SimpleXMLElement($result);
-//close connection
-   curl_close($ch);
-   error_log("result11:");
-   error_log($responseData1);
 }else{
    //Calling CRM API to create Lead
    $strCrmApiUrl = "api.5paisa.com/crmapi/api/preregister";
