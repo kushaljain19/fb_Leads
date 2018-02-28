@@ -3,4 +3,5 @@ $arr = array(1699841000341305301,1699841000341305309,1699841000341305313,1699841
 foreach ($arr as $recordId) {
 $url = "https://www.zohoapis.com/crm/v2/users/{$recordId}";
 error_log($url);
+}
 ?>
