@@ -10,7 +10,7 @@ foreach ($arr as $recordId) {
   $result = json_decode ($json);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
   curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-  curl_setopt($ch, CURLOPT_POSTFIELDS,$result);
+  curl_setopt($ch, CURLOPT_POSTFIELDS,$json);
   curl_setopt($ch, CURLOPT_URL, $url);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
   $st=curl_exec($ch);
