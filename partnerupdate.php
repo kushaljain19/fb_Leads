@@ -4,7 +4,7 @@ foreach ($arr as $recordId) {
   $url = "https://www.zohoapis.com/crm/v2/users/{$recordId}";
   error_log($url);
   $headers = array("Content-type: application/json");
-  $headers = array("Authorization: Zoho-oauthtoken 1000.fe8ebbba2442c412fb99e9da32c3a464.e65f3085ec1f2b885365719c8a563153");
+  $headers = array("Authorization: Zoho-oauthtoken 1000.091a3842c892761a06e6cea9b55651c2.56d54394d89a7e7e9103d56794150af1");
   $ch = curl_init();
   $json = '{"users":[{"reporting_to_id":"1699841000311564761",}]}';
   $result = json_decode ($json);
@@ -22,7 +22,7 @@ foreach ($arr as $recordId) {
   $url = "https://www.zohoapis.com/crm/v2/users/{$recordId}";
   error_log($url);
   $headers = array("Content-type: application/json");
-  $headers = array("Authorization: Zoho-oauthtoken 1000.fe8ebbba2442c412fb99e9da32c3a464.e65f3085ec1f2b885365719c8a563153");
+  $headers = array("Authorization: Zoho-oauthtoken 1000.091a3842c892761a06e6cea9b55651c2.56d54394d89a7e7e9103d56794150af1");
   $ch = curl_init();
   $json = '{"users":[{"reporting_to_id":"1699841000334620401",}]}';
   $result = json_decode ($json);
