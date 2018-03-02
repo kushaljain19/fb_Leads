@@ -51,8 +51,7 @@ foreach ($arr as $recordId) {
           if(strpos($key, $access_token_param)!== false){
           error_log($val);
           }
-         }
-       }
+        }
       }
     }
   }
