@@ -8,9 +8,10 @@ foreach ($arr as $recordId) {
   $content_type = "application/json";
   //$headers->Content-type = $content_type;
   $headers->Authorization = $accesstokenparam;
+  error_log(json_encode($headers));
   $ch = curl_init();
   $param1 = '{"users":[{"reporting_to_id":';
-  $reportingid = "1699841000311564761";
+  $reportingid = '"1699841000311564761"';
   $param2 = '}]}';
   $json = $param1.$reportingid.$param2;
   error_log($json);
