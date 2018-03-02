@@ -11,13 +11,10 @@
                 $status_code_value = $val;
               }
               if(strpos($key, $users_param)!== false){
-                error_log($val);
-                $status_code_value = $val;
-                $arr1 = (json_decode($val, true));
-                foreach ( $arr1 as $key=>$val ){
-                  if(strpos($key, $users_id_param)!== false){
-                    error_log($val);
-                    $users_id = $val;
+                foreach ( $val as $key1=>$val1 ){
+                  if(strpos($key1, $users_id_param)!== false){
+                    error_log($val1);
+                    $users_id = $val1;
                   }
                 }
               }
