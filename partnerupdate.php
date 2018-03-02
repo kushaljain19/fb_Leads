@@ -5,9 +5,10 @@ foreach ($arr as $recordId) {
   error_log($url);
   $access_token = "1000.f39c97afd70070d1fe8b2bc7be1a620b.1b36a4797c7715274a3e2ec8c6c16a82";
   $accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
+  $headers = array("Authorization: $accesstokenparam");
   $content_type = "application/json";
   //$headers->Content-type = $content_type;
-  $headers->Authorization = $accesstokenparam;
+  //$headers->Authorization = $accesstokenparam;
   error_log(json_encode($headers));
   $ch = curl_init();
   $param1 = '{"users":[{"reporting_to_id":';
