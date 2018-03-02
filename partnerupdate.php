@@ -45,7 +45,7 @@ foreach ($arr as $recordId) {
         //error_log("token response");
         //error_log($tokenst);
         $access_token_param="access_token";
-        $tokenst = {"access_token":"1000.f39c97afd70070d1fe8b2bc7be1a620b.1b36a4797c7715274a3e2ec8c6c16a82","expires_in_sec":3600,"api_domain":"https://www.zohoapis.com","token_type":"Bearer","expires_in":3600000};
+        $tokenst = '{"access_token":"1000.f39c97afd70070d1fe8b2bc7be1a620b.1b36a4797c7715274a3e2ec8c6c16a82","expires_in_sec":3600,"api_domain":"https://www.zohoapis.com","token_type":"Bearer","expires_in":3600000}';
         $arr = (json_decode($tokenst, true));
         foreach ( $arr as $key=>$val ){
           if(strpos($key, $access_token_param)!== false){
