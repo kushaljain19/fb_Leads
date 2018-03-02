@@ -25,5 +25,6 @@ foreach ($arr as $recordId) {
   $AlternatePhoneNumber2 = "FAILURE";
   if(strpos($st, $AlternatePhoneNumber)!== false){
       error_log($AlternateNumber);
-   }
+  }
+}
 ?>
