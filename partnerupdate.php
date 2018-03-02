@@ -88,11 +88,6 @@ foreach ( $movies as $movie ) {
             $content_type = "application/json";
             error_log(json_encode($headers));
             $ch = curl_init();
-            $param1 = '{"users":[{"reporting_to_id":';
-            $reportingid = $reporting_id;
-            $param2 = '}]}';
-            $json = $param1.$reportingid.$param2;
-            error_log($json);
             $result = json_decode ($json);
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
