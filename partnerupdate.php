@@ -16,10 +16,14 @@ foreach ($arr as $recordId) {
   $st=curl_exec($ch);
   error_log("first response");
   error_log($st);
+  $arr = (json_decode($st, true));
+  $AlternatePhoneNumber=$arr["code"];
+  $AlternatePhoneNumber=$arr["message"];
+  error_log($AlternateNumber);
+  error_log($AlternateNumber2);
   $AlternatePhoneNumber = "invalid";
   $AlternatePhoneNumber2 = "FAILURE";
   if(strpos($st, $AlternatePhoneNumber)!== false){
       error_log($AlternateNumber);
    }
-}
 ?>
