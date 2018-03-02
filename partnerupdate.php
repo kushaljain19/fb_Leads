@@ -6,7 +6,7 @@ foreach ($arr as $recordId) {
   $access_token = "1000.f1b0655637abf45aa08f92820f8b418d.737629ca1181e9f0b9c99d292dccb2f5";
   $accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
   $content_type = "application/json";
-  $headers->Content-type = $content_type;
+  //$headers->Content-type = $content_type;
   $headers->Authorization = $accesstokenparam;
   $ch = curl_init();
   $json = '{"users":[{"reporting_to_id":"1699841000311564761",}]}';
