@@ -17,10 +17,10 @@ foreach ($arr as $recordId) {
   error_log("first response");
   error_log($st);
   $arr = (json_decode($st, true));
-  $AlternatePhoneNumber=$arr["code"];
-  $AlternatePhoneNumber=$arr["message"];
-  error_log($AlternateNumber);
-  error_log($AlternateNumber2);
+  foreach ( $arr as $key=>$val ){
+    error_log($key);
+    error_log($val);
+  } 
   $AlternatePhoneNumber = "invalid";
   $AlternatePhoneNumber2 = "FAILURE";
   if(strpos($st, $AlternatePhoneNumber)!== false){
