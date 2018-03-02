@@ -17,7 +17,6 @@ foreach ( $movies as $movie ) {
     }
   }
   error_log ($recordId);
-  error_log ($reporting_id); 
-  }
+  error_log ($reporting_id);
 }
 ?>
