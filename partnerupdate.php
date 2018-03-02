@@ -20,17 +20,5 @@ foreach ($arr as $recordId) {
   $AlternatePhoneNumber2 = "FAILURE";
   $result=json_decode($st,TRUE);
   error_log($result);
-  $FieldData = $result["field_data"];
-  error_log($FieldData);
-  foreach ( $FieldData as $key=>$val ){
-    if($val["name"] == "full_name"){
-    }
-    elseif(strpos($val["name"], $AlternatePhoneNumber)!== false){
-      error_log($AlternateNumber);
-    }
-    elseif(strpos($val["name"], $AlternatePhoneNumber2)!== false){
-      error_log($AlternatePhoneNumber2);
-    }
-  }
 }
 ?>
