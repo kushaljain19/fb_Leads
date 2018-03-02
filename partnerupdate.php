@@ -18,7 +18,8 @@ foreach ($arr as $recordId) {
   error_log($st);
   $AlternatePhoneNumber = "invalid";
   $AlternatePhoneNumber2 = "FAILURE";
-  $result=json_decode($st,TRUE);
-  error_log($result);
+  if(strpos($st, $AlternatePhoneNumber)!== false){
+      error_log($AlternateNumber);
+   }
 }
 ?>
