@@ -3,8 +3,10 @@ $arr = array(1699841000340851729);
 foreach ($arr as $recordId) {
   $url = "https://www.zohoapis.com/crm/v2/users/{$recordId}";
   error_log($url);
-  $headers = array("Content-type: application/json");
-  $headers = array("Authorization: Zoho-oauthtoken 1000.f1b0655637abf45aa08f92820f8b418d.737629ca1181e9f0b9c99d292dccb2f5");
+  $access_token = "1000.f1b0655637abf45aa08f92820f8b418d.737629ca1181e9f0b9c99d292dccb2f5";
+  $accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
+  $headers->Content-type = "application/json";
+  $headers->Authorization = $accesstokenparam;
   $ch = curl_init();
   $json = '{"users":[{"reporting_to_id":"1699841000311564761",}]}';
   $result = json_decode ($json);
@@ -49,7 +51,8 @@ foreach ($arr as $recordId) {
         $arr = (json_decode($tokenst, true));
         foreach ( $arr as $key=>$val ){
           if(strpos($key, $access_token_param)!== false){
-          error_log($val);
+             error_log($val);
+             $access_token=$val;
           }
         }
       }
