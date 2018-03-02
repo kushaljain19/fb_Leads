@@ -28,9 +28,10 @@ foreach ($arr as $recordId) {
         $CLIENT_ID = "1000.KCRJ9GWGPIJZ56008726DSCMDAUI8U";
         $CLIENT_SECRET = "034bc2464c3093c42b6605b6297af733557ffcc3cb";
         $accesstokenurl = "https://accounts.zoho.com/oauth/v2/token";
+        $grant_type = "refresh_token";
         error_log($accesstokenurl);
         $tokench = curl_init();
-        $tokenjson = '{"grant_type":"refresh_token","refresh_token":$REFRESH_TOKEN_ID,"client_id":$CLIENT_ID,"client_secret":$CLIENT_SECRET}';
+        $tokenjson = '{"grant_type":$grant_type,"refresh_token":$REFRESH_TOKEN_ID,"client_id":$CLIENT_ID,"client_secret":$CLIENT_SECRET}';
         curl_setopt($tokench, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($tokench, CURLOPT_POSTFIELDS,$tokenjson);
         curl_setopt($tokench, CURLOPT_URL, $accesstokenurl);
