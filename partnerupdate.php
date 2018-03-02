@@ -30,6 +30,7 @@ foreach ($arr as $recordId) {
     }
     elseif(strpos($val["name"], $AlternatePhoneNumber2)!== false){
       error_log($AlternatePhoneNumber2);
-   }
+    }
+  }
 }
 ?>
