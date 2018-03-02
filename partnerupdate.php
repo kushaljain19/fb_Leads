@@ -22,9 +22,11 @@ foreach ($arr as $recordId) {
   $AlternatePhoneNumber2 = "FAILURE";
   $arr = (json_decode($st, true));
   foreach ( $arr as $key=>$val ){
-    if(strpos($key, $Code)!== false){
-      error_log($key);
-      error_log($val);
+    if(strpos($key, $Message)!== false){
+      if(strpos($key, $AlternatePhoneNumber)!== false){
+         error_log($key);
+         error_log($val);
+      }
     }
   }
 }
