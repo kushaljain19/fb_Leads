@@ -1,5 +1,5 @@
 <?php
-$arr = array(1699841000340851729,1699841000340851733);
+$arr = array(1699841000340851729);
 foreach ($arr as $recordId) {
   $url = "https://www.zohoapis.com/crm/v2/users/{$recordId}";
   error_log($url);
@@ -24,8 +24,20 @@ foreach ($arr as $recordId) {
   foreach ( $arr as $key=>$val ){
     if(strpos($key, $Message)!== false){
       if(strpos($val, $AlternatePhoneNumber)!== false){
-         error_log($key);
-         error_log($val);
+        REFRESH_TOKEN_ID = "1000.e6c1444c8dfe5be81e2071d68c92e76b.0442c58394e29dde316f5be4057484ec";
+        CLIENT_ID = "1000.KCRJ9GWGPIJZ56008726DSCMDAUI8U";
+        CLIENT_SECRET = "034bc2464c3093c42b6605b6297af733557ffcc3cb";
+        $accesstokenurl = "https://accounts.zoho.com/oauth/v2/token";
+        error_log($accesstokenurl);
+        $tokench = curl_init();
+        $tokenjson = '{"grant_type":"refresh_token","refresh_token":REFRESH_TOKEN_ID,"client_id":CLIENT_ID,"client_secret":CLIENT_SECRET}';
+        curl_setopt($tokench, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($tokench, CURLOPT_POSTFIELDS,$tokenjson);
+        curl_setopt($tokench, CURLOPT_URL, $accesstokenurl);
+        curl_setopt($tokench, CURLOPT_RETURNTRANSFER, 1);  
+        $tokenst=curl_exec($tokench);
+        error_log("token response");
+        error_log($tokenst);
       }
     }
   }
