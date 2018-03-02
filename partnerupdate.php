@@ -31,7 +31,12 @@ foreach ($arr as $recordId) {
         $grant_type = "refresh_token";
         error_log($accesstokenurl);
         $tokench = curl_init();
-        $tokenjson = '{"grant_type":$grant_type,"refresh_token":$REFRESH_TOKEN_ID,"client_id":$CLIENT_ID,"client_secret":$CLIENT_SECRET}';
+        $myObj->grant_type = $grant_type;
+        $myObj->refresh_token = $REFRESH_TOKEN_ID;
+        $myObj->client_id = $CLIENT_ID;
+        $myObj->client_secret=$CLIENT_SECRET;
+        $tokenjson = json_encode($myObj);
+        //$tokenjson = '{"grant_type":$grant_type,"refresh_token":$REFRESH_TOKEN_ID,"client_id":$CLIENT_ID,"client_secret":$CLIENT_SECRET}';
         curl_setopt($tokench, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($tokench, CURLOPT_POSTFIELDS,$tokenjson);
         curl_setopt($tokench, CURLOPT_URL, $accesstokenurl);
