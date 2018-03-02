@@ -23,7 +23,7 @@ foreach ($arr as $recordId) {
   $arr = (json_decode($st, true));
   foreach ( $arr as $key=>$val ){
     if(strpos($key, $Message)!== false){
-      if(strpos($key, $AlternatePhoneNumber)!== false){
+      if(strpos($val, $AlternatePhoneNumber)!== false){
          error_log($key);
          error_log($val);
       }
