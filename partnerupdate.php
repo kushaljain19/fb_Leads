@@ -24,10 +24,10 @@ foreach ($arr as $recordId) {
   foreach ( $arr as $key=>$val ){
     if(strpos($key, $Message)!== false){
       if(strpos($val, $AlternatePhoneNumber)!== false){
-        REFRESH_TOKEN_ID = "1000.e6c1444c8dfe5be81e2071d68c92e76b.0442c58394e29dde316f5be4057484ec";
-        CLIENT_ID = "1000.KCRJ9GWGPIJZ56008726DSCMDAUI8U";
-        CLIENT_SECRET = "034bc2464c3093c42b6605b6297af733557ffcc3cb";
-        $accesstokenurl = "https://accounts.zoho.com/oauth/v2/token";
+        REFRESH_TOKEN_ID = '1000.e6c1444c8dfe5be81e2071d68c92e76b.0442c58394e29dde316f5be4057484ec';
+        CLIENT_ID = '1000.KCRJ9GWGPIJZ56008726DSCMDAUI8U';
+        CLIENT_SECRET = '034bc2464c3093c42b6605b6297af733557ffcc3cb';
+        $accesstokenurl = 'https://accounts.zoho.com/oauth/v2/token';
         error_log($accesstokenurl);
         $tokench = curl_init();
         $tokenjson = '{"grant_type":"refresh_token","refresh_token":REFRESH_TOKEN_ID,"client_id":CLIENT_ID,"client_secret":CLIENT_SECRET}';
