@@ -1,11 +1,13 @@
 <?php
 $access_token = "1000.f39c97afd70070d1fe8b2bc7be1a620b.1b36a4797c7715274a3e2ec8c6c16a82";
 $movies = array(
-  array("user_Id" => "1699841000340851001","reporting_id" => "1699841000334764098"),
-  array("user_Id" => "1699841000340851041","reporting_id" => "1699841000311564490")
+  array("user_Id" => "1699841000340851097","reporting_id" => "1699841000334765059","Emp_Code" => "50088884","state" => "Partner Program"),
+  array("user_Id" => "1699841000340851101","reporting_id" => "1699841000311564490","Emp_Code" => "50090929","state" => "Partner Program"),
 );
 $userd_id_param="user_Id";
 $reporting_id_param="reporting_id";
+$Emp_Code_param="Emp_Code";
+$state_param="state";
 foreach ( $movies as $movie ) {
   foreach ( $movie as $key => $value ) {
     error_log ("<dt>$key</dt><dd>$value</dd>");
@@ -14,6 +16,12 @@ foreach ( $movies as $movie ) {
     }
     if(strpos($key, $reporting_id_param)!== false){
       $reporting_id = $value;
+    }
+    if(strpos($key, $Emp_Code_param)!== false){
+      $Emp_Code = $value;
+    }
+    if(strpos($key, $state_param)!== false){
+      $state = $value;
     }
   }
   $url = "https://www.zohoapis.com/crm/v2/users/{$recordId}";
@@ -27,8 +35,10 @@ foreach ( $movies as $movie ) {
   $ch = curl_init();
   $param1 = '{"users":[{"reporting_to_id":';
   $reportingid = $reporting_id;
-  $param2 = '}]}';
-  $json = $param1.$reportingid.$param2;
+  $param2 = '"Emp_Code":';
+  $param3 = '"state":';
+  $param4 = '}]}'; 
+  $json = $param1.$reportingid.$param2.$Emp_Code.$param3.$state.$param4;
   error_log($json);
   $result = json_decode ($json);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
