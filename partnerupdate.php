@@ -21,7 +21,7 @@ foreach ( $movies as $movie ) {
       $Emp_Code = $value;
     }
     if(strpos($key, $state_param)!== false){
-      $state = $value;
+      $state = '"'.$value.'"';
     }
   }
   $url = "https://www.zohoapis.com/crm/v2/users/{$recordId}";
@@ -35,8 +35,8 @@ foreach ( $movies as $movie ) {
   $ch = curl_init();
   $param1 = '{"users":[{"reporting_to_id":';
   $reportingid = $reporting_id;
-  $param2 = '"Emp_Code":';
-  $param3 = '"state":';
+  $param2 = ', "Emp_Code":';
+  $param3 = ', "state":';
   $param4 = '}]}'; 
   $json = $param1.$reportingid.$param2.$Emp_Code.$param3.$state.$param4;
   error_log($json);
