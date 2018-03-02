@@ -6,7 +6,7 @@ $movies = array(
 );
 foreach ( $movies as $movie ) {
   foreach ( $movie as $key => $value ) {
-    echo "<dt>$key</dt><dd>$value</dd>";
+    error_log ("<dt>$key</dt><dd>$value</dd>");
   }
 }
 ?>
