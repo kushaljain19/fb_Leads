@@ -1,7 +1,7 @@
 <?php
-$access_token = "1000.321c4dc22d30b09b4012db1451de7e75.7e64542eb893772940061113b86b67a3";
+$access_token = "1000.75ee2ecaa5c3856d71ef630214c61918.8b7c371de8f06ac2f7c592f2a085b181";
 $movies = array(
-array("email_id" => "55889989@5paisa.com", "last_name" => "NIKHIL RAMPAL","reporting_id" => "1699841000207001877","Emp_Code" => "55889989","state" => "Partner Program")
+array("email_id" => "59302333@5paisa.com", "last_name" => "VIJAY MISHRA","reporting_id" => "1699841000207001877","Emp_Code" => "59302333","state" => "Partner Program")
 );
 $email_id_param = "email_id";
 $last_name_param = "last_name";
@@ -102,12 +102,12 @@ foreach ( $movies as $movie ) {
             				foreach ( $arr as $key=>$val ){
 						if(strpos($key, $status_code_param)!== false){
 							error_log($val);
-							if(strpos($key, $users_param)!== false){
-								foreach ( $val as $key1=>$val1 ){
-									if(strpos($key1, $users_id_param)!== false){
-										error_log($val1);
-										$users_id = $val1;
-									}
+						}
+						if(strpos($key, $users_param)!== false){
+							foreach ( $val as $key1=>$val1 ){
+								if(strpos($key1, $users_id_param)!== false){
+									error_log($val1);
+									$users_id = $val1;
 								}
 							}
 						}
