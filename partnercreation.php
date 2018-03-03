@@ -1,7 +1,7 @@
 <?php
-$access_token = "1000.c3d50cf57774a5e861ec164b32d9a3be.07bd6c0617df95f5d4b91092aa152c84";
+$access_token = "1000.29ceed61c22df19390dc5d90d13c7762.8b1f95dd7576c7ee30da846a02dde4c0";
 $movies = array(
-array("email_id" => "55955099@5paisa.com","last_name" => "KIRIT PATEL","reporting_id" => "1699841000207001877","Emp_Code" => "55955099","state" => "Partner Program"));
+array("email_id" => "59194199@5paisa.com","last_name" => "RAVI GUPTA","reporting_id" => "1699841000207001877","Emp_Code" => "59194199","state" => "Partner Program"));
 $email_id_param = "email_id";
 $last_name_param = "last_name";
 $userd_id_param="user_Id";
@@ -56,10 +56,11 @@ foreach ( $movies as $movie ) {
   	$AlternatePhoneNumber = "invalid";
   	$AlternatePhoneNumber2 = "Something went wrong";
 	$status_code_param = "status_code";
-    $users_param = "users";
+    	$users_param = "users";
 	$users_id_param = "zuid";
   	$arr = (json_decode($st, true));
   	foreach ( $arr as $key=>$val ){
+		error_log($key);
 		if(strpos($key, $Message)!== false){
 			if((strpos($val, $AlternatePhoneNumber)!== false)||(strpos($val, $AlternatePhoneNumber2)!== false)){
 				$REFRESH_TOKEN_ID = '1000.75d23c87dbfd9bb6ce22e7d6284476fe.8c667a2ecd6233fb5877f015f905f0b0';
@@ -197,6 +198,8 @@ foreach ( $movies as $movie ) {
 		error_log($st);
 		$arr = (json_decode($st, true));
 		foreach ( $arr as $key=>$val ){
+			error_log("inside else");
+			error_log($key);
 			if(strpos($key, $Message)!== false){
 				if((strpos($val, $AlternatePhoneNumber)!== false)||(strpos($val, $AlternatePhoneNumber2)!== false)){
 					$REFRESH_TOKEN_ID = '1000.75d23c87dbfd9bb6ce22e7d6284476fe.8c667a2ecd6233fb5877f015f905f0b0';
