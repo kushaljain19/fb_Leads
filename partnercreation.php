@@ -1,8 +1,6 @@
 <?php
 $access_token = "1000.75ee2ecaa5c3856d71ef630214c61918.8b7c371de8f06ac2f7c592f2a085b181";
-$movies = array(
-array("email_id" => "59302333@5paisa.com", "last_name" => "VIJAY MISHRA","reporting_id" => "1699841000207001877","Emp_Code" => "59302333","state" => "Partner Program")
-);
+$movies = array(array("email_id" => "59225727@5paisa.com","last_name" => "MAITRAK NANAVATI","reporting_id" => "1699841000207001877","Emp_Code" => "59225727","state" => "Partner Program"));
 $email_id_param = "email_id";
 $last_name_param = "last_name";
 $userd_id_param="user_Id";
