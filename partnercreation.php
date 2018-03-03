@@ -174,4 +174,5 @@ foreach ( $movies as $movie ) {
    		}
 	}
 }
+}
 ?>
