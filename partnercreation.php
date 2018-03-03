@@ -1,7 +1,7 @@
 <?php
-$access_token = "1000.29ceed61c22df19390dc5d90d13c7762.8b1f95dd7576c7ee30da846a02dde4c0";
+$access_token = "1000.e2e3ce6d01d48a30a2cbe0dd8192fa7f.8c07fd81f2815f80b5200b54db6a185b";
 $movies = array(
-array("email_id" => "59194199@5paisa.com","last_name" => "RAVI GUPTA","reporting_id" => "1699841000207001877","Emp_Code" => "59194199","state" => "Partner Program"));
+array("email_id" => "59181148@5paisa.com","last_name" => "RAJENDRA DEVAL","reporting_id" => "1699841000207001877","Emp_Code" => "59181148","state" => "Partner Program"));
 $email_id_param = "email_id";
 $last_name_param = "last_name";
 $userd_id_param="user_Id";
@@ -172,7 +172,8 @@ foreach ( $movies as $movie ) {
       				}
      			}  
    		}
-		if(strpos($key, $status_code_param)!== false){
+	}
+	if(strpos($key, $status_code_param)!== false){
 			error_log($val);
 		}
 		if(strpos($key, $users_param)!== false){
@@ -242,7 +243,7 @@ foreach ( $movies as $movie ) {
 				}		
 			}
        	}
-	}
+	
 }
 }
 ?>
