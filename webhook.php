@@ -61,6 +61,7 @@ $findNewToStockMarket="invested";
 $findInvestmentAmount="start_investing";
 $upto3lakh="upto";
 $to5lakh="to_5";
+$source = "Facebook";
 $to5lakh2="to_rs_5";
 $morethan5lakh="more_than";
 $morethan5lakh2="more than";
@@ -277,6 +278,8 @@ if( strpos( $campaign, "Hindi" ) !== false ) {
     $PrefLang = "Telugu";
 }else if( strpos( $campaign, "TELUGU" ) !== false ) {
     $PrefLang = "Telugu";
+}else if( strpos( $campaign, "Partner" ) !== false ) {
+   $source = "Partner Program" 
 }
 
 if(strpos($LeadProduct, "Health" ) !== false){
@@ -303,7 +306,7 @@ if(strpos($LeadProduct, "Health" ) !== false){
 }else{
    //Calling CRM API to create Lead
    $strCrmApiUrl = "api.5paisa.com/crmapi/api/preregister";
-   $crmapi_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=Facebook&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description)."%26Unbounce_ID%3D".urlencode($leadgen_id)."%26Gender%3D".urlencode($gender)."%26City%3D".urlencode($city)."%26State%3D".urlencode($state)."%26SumAssured%3D".urlencode($HealthInsuranceCover)."%26Individual/Family%3D".urlencode($HealthInsuranceFor)."%26DateOfBirth%3D".urlencode($DateofBirth)."%26NewToMarket%3D".urlencode($NewToStockMarket)."%26PreferredLanguage%3D".urlencode($PrefLang)."%26Pincode%3D".urlencode($PincodeValue)."%26Education%3D".urlencode($Education)."%26Profession%3D".urlencode($Professional)."%26OnlineBuyer%3D".urlencode($OnlineBuyer)."%26HowSoon%3D".urlencode($HowSoon)."%26Phone%3D".urlencode($AlternateNumber);
+   $crmapi_post_fields="IsReg=N&LName=".urlencode($name)."&Mobile=".urlencode($phone_number)."&Email=".urlencode($email)."&LeadSource=".urlencode($source)."&LeadCampaign=".urlencode($campaign)."&LeadProduct=".urlencode($LeadProduct)."&UrlParam=Description%3D".urlencode($description)."%26Unbounce_ID%3D".urlencode($leadgen_id)."%26Gender%3D".urlencode($gender)."%26City%3D".urlencode($city)."%26State%3D".urlencode($state)."%26SumAssured%3D".urlencode($HealthInsuranceCover)."%26Individual/Family%3D".urlencode($HealthInsuranceFor)."%26DateOfBirth%3D".urlencode($DateofBirth)."%26NewToMarket%3D".urlencode($NewToStockMarket)."%26PreferredLanguage%3D".urlencode($PrefLang)."%26Pincode%3D".urlencode($PincodeValue)."%26Education%3D".urlencode($Education)."%26Profession%3D".urlencode($Professional)."%26OnlineBuyer%3D".urlencode($OnlineBuyer)."%26HowSoon%3D".urlencode($HowSoon)."%26Phone%3D".urlencode($AlternateNumber);
    error_log("api url");
    error_log($strCrmApiUrl."?".$crmapi_post_fields);
    $ch2 = curl_init();
