@@ -1,7 +1,7 @@
 <?php
-$access_token = "1000.e2e3ce6d01d48a30a2cbe0dd8192fa7f.8c07fd81f2815f80b5200b54db6a185b";
+$access_token = "1000.c3d50cf57774a5e861ec164b32d9a3be.07bd6c0617df95f5d4b91092aa152c84";
 $movies = array(
-array("email_id" => "59181148@5paisa.com","last_name" => "RAJENDRA DEVAL","reporting_id" => "1699841000207001877","Emp_Code" => "59181148","state" => "Partner Program"));
+array("email_id" => "53685765@5paisa.com","last_name" => "AKSHAY JOSHI","reporting_id" => "1699841000333820388","Emp_Code" => "53685765","state" => "Partner Program"));
 $email_id_param = "email_id";
 $last_name_param = "last_name";
 $userd_id_param="user_Id";
@@ -56,7 +56,7 @@ foreach ( $movies as $movie ) {
   	$AlternatePhoneNumber = "invalid";
   	$AlternatePhoneNumber2 = "Something went wrong";
 	$status_code_param = "status_code";
-    	$users_param = "users";
+    $users_param = "users";
 	$users_id_param = "zuid";
   	$arr = (json_decode($st, true));
   	foreach ( $arr as $key=>$val ){
@@ -80,11 +80,11 @@ foreach ( $movies as $movie ) {
         		error_log("token response");
         		error_log($tokenst);
         		$access_token_param="access_token";
-        		$arr = (json_decode($tokenst, true));
-        		foreach ( $arr as $key=>$val ){
-          			if(strpos($key, $access_token_param)!== false){
-            			error_log($val);
-            			$access_token=$val;
+        		$arr1 = (json_decode($tokenst, true));
+        		foreach ( $arr1 as $key1=>$val1 ){
+          			if(strpos($key1, $access_token_param)!== false){
+            			error_log($val1);
+            			$access_token=$val1;
             			$accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
             			$headers = array("Authorization: $accesstokenparam");
             			$content_type = "application/json";
@@ -98,20 +98,47 @@ foreach ( $movies as $movie ) {
             			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
             			$st=curl_exec($ch);            
             			error_log($st);          
-            			$arr = (json_decode($st, true));
-            			foreach ( $arr as $key=>$val ){
-							if(strpos($key, $status_code_param)!== false){
-								error_log($val);
+            			$arr2 = (json_decode($st, true));
+            			foreach ( $arr2 as $key2=>$val2 ){
+							if(strpos($key2, $status_code_param)!== false){
+								error_log($val2);
 							}
-							if(strpos($key, $users_param)!== false){
-								foreach ( $val as $key1=>$val1 ){
-									if(strpos($key1, $users_id_param)!== false){
-										error_log($val1);
-										$users_id = $val1;
+							if(strpos($key2, $users_param)!== false){
+								foreach ( $val2 as $key3=>$val3 ){
+									if(strpos($key3, $users_id_param)!== false){
+										error_log($val3);
+										$users_id = $val3;
+										$param4 = '{"members" : {"role_id" : "1699841000000026008","profile_id" : "1699841000336610025","zaaid" : "62047589","zuid" :';
+										$param5 = '}}';
+										$json2 = $param4.$users_id.$param5;
+										error_log($json2);
+										$result = json_decode ($json);
+										curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+										curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+										curl_setopt($ch, CURLOPT_POSTFIELDS,$json2);
+										curl_setopt($ch, CURLOPT_URL, $zohocrmurl);
+										curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
+										$st=curl_exec($ch);
+										error_log("first response");
+										error_log($st);
 									}
 								}
 							}
 						}
+      				}
+     			}
+			}
+		}
+		if(strpos($key, $status_code_param)!== false){
+			error_log($val);
+		}
+		if(strpos($key, $users_param)!== false){
+			foreach ( $val as $key1=>$val1 ){
+				error_log($key1);
+				if(strpos($key1, $users_id_param)!== false){
+					error_log($val1);
+					$users_id = $val1;
+					error_log($users_id);				
 					$param4 = '{"members" : {"role_id" : "1699841000000026008","profile_id" : "1699841000336610025","zaaid" : "62047589","zuid" :';
 					$param5 = '}}';
 					$json2 = $param4.$users_id.$param5;
@@ -125,125 +152,9 @@ foreach ( $movies as $movie ) {
 					$st=curl_exec($ch);
 					error_log("first response");
 					error_log($st);
-		  			$arr = (json_decode($st, true));
-		  			foreach ( $arr as $key=>$val ){
-						if(strpos($key, $Message)!== false){
-							if((strpos($val, $AlternatePhoneNumber)!== false)||(strpos($val, $AlternatePhoneNumber2)!== false)){
-								$REFRESH_TOKEN_ID = '1000.75d23c87dbfd9bb6ce22e7d6284476fe.8c667a2ecd6233fb5877f015f905f0b0';
-								$CLIENT_ID = '1000.EW29NAAKKZMJ44646D0JBLMX8R6EY1';
-								$CLIENT_SECRET = 'bb4461932e7a8160b0f8a906b7daba456b6ce3ffbd';
-								$accesstokenurl = "https://accounts.zoho.com/oauth/v2/token?refresh_token=1000.75d23c87dbfd9bb6ce22e7d6284476fe.8c667a2ecd6233fb5877f015f905f0b0&client_id=1000.EW29NAAKKZMJ44646D0JBLMX8R6EY1&client_secret=bb4461932e7a8160b0f8a906b7daba456b6ce3ffbd&grant_type=refresh_token";
-								$tokench = curl_init();
-								$myObj->grant_type = $grant_type;
-								$myObj->refresh_token = $REFRESH_TOKEN_ID;
-								$myObj->client_id = $CLIENT_ID;
-								$myObj->client_secret=$CLIENT_SECRET;
-								$tokenjson = json_encode($myObj);
-								curl_setopt($tokench, CURLOPT_CUSTOMREQUEST, "POST");
-								curl_setopt($tokench, CURLOPT_URL, $accesstokenurl);
-								curl_setopt($tokench, CURLOPT_RETURNTRANSFER, 1);  
-								$tokenst=curl_exec($tokench);
-								error_log("token response");
-								error_log($tokenst);
-								$access_token_param="access_token";
-								$arr = (json_decode($tokenst, true));
-								foreach ( $arr as $key=>$val ){
-									if(strpos($key, $access_token_param)!== false){
-										error_log($val);
-										$access_token=$val;
-										$accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
-										$headers = array("Authorization: $accesstokenparam");
-										$content_type = "application/json";
-										error_log(json_encode($headers));
-										$ch = curl_init();
-										$result = json_decode ($json);
-										curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-										curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-										curl_setopt($ch, CURLOPT_POSTFIELDS,$json2);
-										curl_setopt($ch, CURLOPT_URL, $zohocrmurl);
-										curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
-										$st=curl_exec($ch);
-										error_log($st); 
-									}
-								}
-							}		
-						}
-       					}
-      				}
-     			}  
-   		}
-	}
-	if(strpos($key, $status_code_param)!== false){
-			error_log($val);
-		}
-		if(strpos($key, $users_param)!== false){
-			foreach ( $val as $key1=>$val1 ){
-				if(strpos($key1, $users_id_param)!== false){
-					error_log($val1);
-					$users_id = $val1;
 				}
 			}
-		}
-		$param4 = '{"members" : {"role_id" : "1699841000000026008","profile_id" : "1699841000336610025","zaaid" : "62047589","zuid" :';
-		$param5 = '}}';
-		$json2 = $param4.$users_id.$param5;
-		error_log($json2);
-		$result = json_decode ($json);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-		curl_setopt($ch, CURLOPT_POSTFIELDS,$json2);
-		curl_setopt($ch, CURLOPT_URL, $zohocrmurl);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
-		$st=curl_exec($ch);
-		error_log("first response");
-		error_log($st);
-		$arr = (json_decode($st, true));
-		foreach ( $arr as $key=>$val ){
-			error_log("inside else");
-			error_log($key);
-			if(strpos($key, $Message)!== false){
-				if((strpos($val, $AlternatePhoneNumber)!== false)||(strpos($val, $AlternatePhoneNumber2)!== false)){
-					$REFRESH_TOKEN_ID = '1000.75d23c87dbfd9bb6ce22e7d6284476fe.8c667a2ecd6233fb5877f015f905f0b0';
-					$CLIENT_ID = '1000.EW29NAAKKZMJ44646D0JBLMX8R6EY1';
-					$CLIENT_SECRET = 'bb4461932e7a8160b0f8a906b7daba456b6ce3ffbd';
-					$accesstokenurl = "https://accounts.zoho.com/oauth/v2/token?refresh_token=1000.75d23c87dbfd9bb6ce22e7d6284476fe.8c667a2ecd6233fb5877f015f905f0b0&client_id=1000.EW29NAAKKZMJ44646D0JBLMX8R6EY1&client_secret=bb4461932e7a8160b0f8a906b7daba456b6ce3ffbd&grant_type=refresh_token";
-					$tokench = curl_init();
-					$myObj->grant_type = $grant_type;
-					$myObj->refresh_token = $REFRESH_TOKEN_ID;
-					$myObj->client_id = $CLIENT_ID;
-					$myObj->client_secret=$CLIENT_SECRET;
-					$tokenjson = json_encode($myObj);
-					curl_setopt($tokench, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($tokench, CURLOPT_URL, $accesstokenurl);
-					curl_setopt($tokench, CURLOPT_RETURNTRANSFER, 1);  
-					$tokenst=curl_exec($tokench);
-					error_log("token response");
-					error_log($tokenst);
-					$access_token_param="access_token";
-					$arr = (json_decode($tokenst, true));
-					foreach ( $arr as $key=>$val ){
-						if(strpos($key, $access_token_param)!== false){
-							error_log($val);
-							$access_token=$val;
-							$accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
-							$headers = array("Authorization: $accesstokenparam");
-							$content_type = "application/json";
-							error_log(json_encode($headers));
-							$ch = curl_init();
-							$result = json_decode ($json);
-							curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-							curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-							curl_setopt($ch, CURLOPT_POSTFIELDS,$json2);
-							curl_setopt($ch, CURLOPT_URL, $zohocrmurl);
-							curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
-							$st=curl_exec($ch);
-							error_log($st); 
-						}
-					}
-				}		
-			}
-       	}
-	
-}
+		}	
+	}
 }
 ?>
