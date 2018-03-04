@@ -1,7 +1,7 @@
 <?php
-$access_token = "1000.82c3a362427832c78147cd7235853ed1.5f6650e0eb4eca7bcad5694438b999c3";
+$access_token = "1000.41e7d8cf52c48fa0d3a0a548e0c6beda.a42ec1ebabd7790a9b550292a31ea2a5";
 $movies = array(
-array("user_Id" => "1699841000341734749","reporting_id" => "1699841000334764098","Emp_Code" => "53414021","last_name" => "CHANDNI THAKER","state" => "Partner Program"));
+array("user_Id" => "1699841000341734369","Emp_Code" => "59498984","last_name" => "SUDAM MOKASE","state" => "Partner Program"));
 $userd_id_param="user_Id";
 $reporting_id_param="reporting_id";
 $Emp_Code_param="Emp_Code";
@@ -36,12 +36,13 @@ foreach ( $movies as $movie ) {
   error_log(json_encode($headers));
   $ch = curl_init();
   $param1 = '{"users":[{"first_name" : "5P Partner","last_name" :';
-  $param10 = ',"reporting_to_id":';
-  $reportingid = $reporting_id;
+  //$param10 = ',"reporting_to_id":';
+  //$reportingid = $reporting_id;
   $param2 = ', "Emp_Code":';
   $param3 = ', "state":';
   $param4 = '}]}'; 
-  $json = $param1.$last_name.$param10.$reportingid.$param2.$Emp_Code.$param3.$state.$param4;
+  //$json = $param1.$last_name.$param10.$reportingid.$param2.$Emp_Code.$param3.$state.$param4;
+  $json = $param1.$last_name.$param2.$Emp_Code.$param3.$state.$param4;
   error_log($json);
   $result = json_decode ($json);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
