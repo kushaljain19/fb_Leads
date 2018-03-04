@@ -16,7 +16,7 @@ foreach ( $movies as $movie ) {
       $recordId = $value;
     }
     if(strpos($key, $reporting_id_param)!== false){
-      $reporting_id = $value;
+      $reporting_id = '"'.$value.'"';
     }
     if(strpos($key, $Emp_Code_param)!== false){
       $Emp_Code = '"'.$value.'"';
