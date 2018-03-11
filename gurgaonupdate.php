@@ -101,8 +101,8 @@ foreach ( $movies as $movie ) {
   
   //{ "users":[ {"reporting_id":"reporting_id", "role_id":role_id, "profile_id":"profile_id", "State":"State", "Emp_Code":"Emp_Code" } ] }
   
-  //$param1 = '{"users":[{"reporting_to_id":';
-  $param1 = '{"users":[{"Emp_Code":';
+  $param1 = '{"users":[{"reporting_to_id":';
+  //$param1 = '{"users":[{"Emp_Code":';
   //$param10 = ',"reporting_to_id":';
   $reportingid = $reporting_id;
   //$param2 = ', "Emp_Code":';
@@ -113,7 +113,7 @@ foreach ( $movies as $movie ) {
   $json = $param1.$reportingid.$param4;
   //$json = $param1.$last_name.$param10.$reportingid.$param2.$Emp_Code.$param3.$state.$param4;
 //  $json = $param1.$reportingid.$param2.$Emp_Code.$param3.$state.$param5.$role_id.$param6.$profile_id.$param4;
-  $json = $param1.$Emp_Code.$param3.$state.$param5.$role_id.$param6.$profile_id.$param4;
+ // $json = $param1.$Emp_Code.$param3.$state.$param5.$role_id.$param6.$profile_id.$param4;
   error_log($json);
   $result = json_decode ($json);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
