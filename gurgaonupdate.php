@@ -111,7 +111,6 @@ foreach ( $movies as $movie ) {
   $param5 = ', "role_id":';
   $param6 = ', "profile_id":';
   $param4 = ',}]}'; 
-  //$json = $param1.$reportingid.$param4;
   //$json = $param1.$last_name.$param10.$reportingid.$param2.$Emp_Code.$param3.$state.$param4;
   $json = $param1.$reportingid.$param2.$Emp_Code.$param3.$state.$param5.$role_id.$param6.$profile_id.$param4;
  //$json = $param1.$Emp_Code.$param3.$state.$param5.$role_id.$param6.$profile_id.$param4;
