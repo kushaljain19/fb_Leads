@@ -4,55 +4,7 @@ $movies = array(
 array("user_Id"=>"1699841000045025956","email_id"=>"kundan.kumar@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000069622901","Emp_Code"=>"C148553","State"=>"Gurgaon"),
 array("user_Id"=>"1699841000045515398","email_id"=>"rahul.kumar2@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000069622901","Emp_Code"=>"C148546","State"=>"Gurgaon"),
 array("user_Id"=>"1699841000057227239","email_id"=>"prashant.verma@5paisa.com","role_id"=>"1699841000342631771","profile_id"=>"1699841000014596081","reporting_id"=>"1699841000069622901","Emp_Code"=>"C148935","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000057296078","email_id"=>"pushpendra.chaturvedi@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000069622901","Emp_Code"=>"C149152","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000062264056","email_id"=>"vedanand.tirath@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000069622901","Emp_Code"=>"C149533","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000062266106","email_id"=>"praveen.singh@5paisa.com","role_id"=>"1699841000342631771","profile_id"=>"1699841000014596081","reporting_id"=>"1699841000092614109","Emp_Code"=>"C149543","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000090059990","email_id"=>"gunjita.mehra@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000145403094","Emp_Code"=>"C150702","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000090121381","email_id"=>"nitin.chand@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000069622901","Emp_Code"=>"C150821","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000090144376","email_id"=>"monu.bhandari@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000145403094","Emp_Code"=>"C150700","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000098339485","email_id"=>"shivani.gupta@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000046490296","Emp_Code"=>"C151147","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000098354938","email_id"=>"a201944@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000046490296","Emp_Code"=>"A201944","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000098357176","email_id"=>"shikha.dhanda@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000046490296","Emp_Code"=>"C151098","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000098369363","email_id"=>"a201946@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000057227239","Emp_Code"=>"A201946","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000098374152","email_id"=>"priya.jaiswal@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000145403094","Emp_Code"=>"C151146","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000098387269","email_id"=>"a201949@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000145403094","Emp_Code"=>"A201949","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000098399025","email_id"=>"atul.virdhi@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000069622901","Emp_Code"=>"C151142","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000098401041","email_id"=>"a201950@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000057227239","Emp_Code"=>"A201950","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000098401045","email_id"=>"jyoti.gupta@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000069622901","Emp_Code"=>"C151116","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000182780734","email_id"=>"a202104@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000062257192","Emp_Code"=>"a202104","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000182839702","email_id"=>"a202097@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000046490296","Emp_Code"=>"a202097","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000183393412","email_id"=>"ashukumar.ray@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000062257192","Emp_Code"=>"C153726","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000183440228","email_id"=>"a202098@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000069622901","Emp_Code"=>"a202098","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000183495003","email_id"=>"a202099@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000062257192","Emp_Code"=>"a202099","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000185110257","email_id"=>"a202106@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000062257192","Emp_Code"=>"a202106","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000211900548","email_id"=>"a202246@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000055816361","Emp_Code"=>"a202246","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000211964996","email_id"=>"a202248@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000145403094","Emp_Code"=>"a202248","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000211969368","email_id"=>"a202242@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000055816361","Emp_Code"=>"a202242","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000211976778","email_id"=>"a202245@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000062266106","Emp_Code"=>"a202245","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000212006269","email_id"=>"a202249@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000062266106","Emp_Code"=>"a202249","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000212006273","email_id"=>"a202252@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000055816361","Emp_Code"=>"a202252","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000212019255","email_id"=>"a202241@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000055816361","Emp_Code"=>"a202241","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000212068258","email_id"=>"a202250@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000055816361","Emp_Code"=>"a202250","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000212080104","email_id"=>"a202247@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000046490296","Emp_Code"=>"a202247","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000222961705","email_id"=>"a202244@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000057227239","Emp_Code"=>"a202244","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000224250668","email_id"=>"a202293@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000055816361","Emp_Code"=>"a202293","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000224255451","email_id"=>"a202267@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000145403094","Emp_Code"=>"a202267","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000224280950","email_id"=>"a202294@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000145403094","Emp_Code"=>"a202294","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000224295458","email_id"=>"a202289@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000055816361","Emp_Code"=>"a202289","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000224324230","email_id"=>"a202265@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000062266106","Emp_Code"=>"a202265","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000224540808","email_id"=>"a202291@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000055816361","Emp_Code"=>"a202291","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000233636861","email_id"=>"a202309@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000046490296","Emp_Code"=>"a202309","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000234359903","email_id"=>"a202301@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000055816361","Emp_Code"=>"a202301","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000236541208","email_id"=>"a202353@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000003603278","reporting_id"=>"1699841000057227239","Emp_Code"=>"a202353","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000339462827","email_id"=>"satya.dev@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000046490296","Emp_Code"=>"C156861","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000048426389","email_id"=>"bhavna.torani@5paisa.com","role_id"=>"1699841000342631763","profile_id"=>"1699841000158432348","reporting_id"=>"","Emp_Code"=>"C148755","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000046490296","email_id"=>"vikassharma@5paisa.com","role_id"=>"1699841000342631771","profile_id"=>"1699841000014596081","reporting_id"=>"1699841000092614109","Emp_Code"=>"C148610","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000062257192","email_id"=>"s.mannu@5paisa.com","role_id"=>"1699841000342631771","profile_id"=>"1699841000014596081","reporting_id"=>"1699841000092614109","Emp_Code"=>"C149544","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000062523410","email_id"=>"arinder.singh@5paisa.com","role_id"=>"1699841000342631771","profile_id"=>"1699841000014596081","reporting_id"=>"1699841000092614109","Emp_Code"=>"C149525","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000069622901","email_id"=>"rohit.pathak@5paisa.com","role_id"=>"1699841000342631771","profile_id"=>"1699841000014596081","reporting_id"=>"1699841000092614109","Emp_Code"=>"C149815","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000145403094","email_id"=>"saransh.sharma@5paisa.com","role_id"=>"1699841000342631771","profile_id"=>"1699841000014596081","reporting_id"=>"1699841000092614109","Emp_Code"=>"C152317","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000055816361","email_id"=>"paras.bhatt@5paisa.com","role_id"=>"1699841000342631763","profile_id"=>"1699841000158432348","reporting_id"=>"","Emp_Code"=>"C149146","State"=>"Gurgaon"),
-array("user_Id"=>"1699841000092614109","email_id"=>"deepak.ahluwalia@5paisa.com","role_id"=>"1699841000342631763","profile_id"=>"1699841000158432348","reporting_id"=>"","Emp_Code"=>"C150788","State"=>"Gurgaon"));
+array("user_Id"=>"1699841000057296078","email_id"=>"pushpendra.chaturvedi@5paisa.com","role_id"=>"1699841000342631775","profile_id"=>"1699841000000126001","reporting_id"=>"1699841000069622901","Emp_Code"=>"C149152","State"=>"Gurgaon"));
 $userd_id_param="user_Id";
 $reporting_id_param="reporting_id";
 $role_id_param="role_id";
@@ -101,8 +53,8 @@ foreach ( $movies as $movie ) {
   
   //{ "users":[ {"reporting_id":"reporting_id", "role_id":role_id, "profile_id":"profile_id", "State":"State", "Emp_Code":"Emp_Code" } ] }
   
-  $param1 = '{"users":[{"reporting_to_id":';
-  //$param1 = '{"users":[{"Emp_Code":';
+  //$param1 = '{"users":[{"reporting_to_id":';
+  $param1 = '{"users":[{"Emp_Code":';
   //$param10 = ',"reporting_to_id":';
   $reportingid = $reporting_id;
   //$param2 = ', "Emp_Code":';
@@ -110,10 +62,10 @@ foreach ( $movies as $movie ) {
   $param5 = ', "role_id":';
   $param6 = ', "profile_id":';
   $param4 = ',}]}'; 
-  $json = $param1.$reportingid.$param4;
+  //$json = $param1.$reportingid.$param4;
   //$json = $param1.$last_name.$param10.$reportingid.$param2.$Emp_Code.$param3.$state.$param4;
 //  $json = $param1.$reportingid.$param2.$Emp_Code.$param3.$state.$param5.$role_id.$param6.$profile_id.$param4;
- // $json = $param1.$Emp_Code.$param3.$state.$param5.$role_id.$param6.$profile_id.$param4;
+ $json = $param1.$Emp_Code.$param3.$state.$param5.$role_id.$param6.$profile_id.$param4;
   error_log($json);
   $result = json_decode ($json);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
