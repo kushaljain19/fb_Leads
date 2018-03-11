@@ -48,7 +48,7 @@ foreach ( $movies as $movie ) {
   error_log(json_encode($headers));
   $ch = curl_init();
   
-  { "users":[ {"reporting_id":"reporting_id", "role_id":role_id, "profile_id":"profile_id", "State":"State", "Emp_Code":"Emp_Code" } ] }
+  //{ "users":[ {"reporting_id":"reporting_id", "role_id":role_id, "profile_id":"profile_id", "State":"State", "Emp_Code":"Emp_Code" } ] }
   
   $param1 = '{"users":[{"reporting_to_id":';
   //$param10 = ',"reporting_to_id":';
