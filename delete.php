@@ -1,5 +1,5 @@
 <?php
-$access_token = "1000.0e89e4460b0afd13f58a3cc3c0445ef1.29b82bf550d9956403838dfd62754882";
+$access_token = "1000.f0595414c94e1a04a8757c37896789c2.3ee97c2bed135a591a55638ade2969ea";
 $movies = array(
 array("user_Id" => "1699841000395426550","reporting_id" => "1699841000009989929"),
 array("user_Id" => "1699841000413945919","reporting_id" => "1699841000333986575"));
@@ -27,7 +27,7 @@ foreach ( $movies as $movie ) {
       $last_name = '"'.$value.'"';
     }
   }
-  $url = "https://crm.zoho.com/crm/v2/Users/{$recordId}";
+  $url = "https://www.zohoapis.com/crm/v2/users/1699841000362305936";
   error_log($url);
   $accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
   $headers = array("Authorization: $accesstokenparam");
@@ -36,20 +36,20 @@ foreach ( $movies as $movie ) {
   //$headers->Authorization = $accesstokenparam;
   error_log(json_encode($headers));
   $ch = curl_init();
-  $param1 = '{"users":[{"reporting_to_id":';
+  $param1 = '{"users":[{"status":"inactive",}]}';
   //$param10 = ',"reporting_to_id":';
-  $reportingid = $reporting_id;
+  //$reportingid = $reporting_id;
   //$param2 = ', "Emp_Code":';
   //$param3 = ', "state":';
-  $param4 = ',}]}'; 
-  $json = $param1.$reportingid.$param4;
+  //$param4 = ',}]}'; 
+  $json = $param1;
   //$json = $param1.$last_name.$param10.$reportingid.$param2.$Emp_Code.$param3.$state.$param4;
   //$json = $param1.$last_name.$param2.$Emp_Code.$param3.$state.$param4;
   error_log($json);
   $result = json_decode ($json);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
-  //curl_setopt($ch, CURLOPT_POSTFIELDS,$json);
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+  curl_setopt($ch, CURLOPT_POSTFIELDS,$json);
   curl_setopt($ch, CURLOPT_URL, $url);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
   $st=curl_exec($ch);
@@ -87,7 +87,7 @@ foreach ( $movies as $movie ) {
           if(strpos($key, $access_token_param)!== false){
             error_log($val);
             $access_token=$val;
-            $url = "https://crm.zoho.com/crm/v2/Users/{$recordId}";
+            $url = "https://www.zohoapis.com/crm/v2/users/1699841000362305936";
             error_log($url);
             $accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
             $headers = array("Authorization: $accesstokenparam");
@@ -97,7 +97,7 @@ foreach ( $movies as $movie ) {
             $result = json_decode ($json);
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
-            //curl_setopt($ch, CURLOPT_POSTFIELDS,$json);
+            curl_setopt($ch, CURLOPT_POSTFIELDS,$json);
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);  
             $st=curl_exec($ch);
