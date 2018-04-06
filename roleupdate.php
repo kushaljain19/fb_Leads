@@ -26,7 +26,7 @@ foreach ( $movies as $movie ) {
       $last_name = '"'.$value.'"';
     }
   }
-  $url = "https://crm.zoho.com/crm/v2/Users/{$recordId}";
+  $url = "https://crm.zoho.com/crm/v2/Users";
   error_log($url);
   $accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
   $headers = array("Authorization: $accesstokenparam");
@@ -35,12 +35,13 @@ foreach ( $movies as $movie ) {
   //$headers->Authorization = $accesstokenparam;
   error_log(json_encode($headers));
   $ch = curl_init();
-  $param1 = '{"users":[{"role_id":';
-  //$param10 = ',"reporting_to_id":';
+  "id":"6000000031085", 
+  $param1 = '{"users":[{"id":';
+  $param10 = ',"role_id":';
   //$param2 = ', "Emp_Code":';
   //$param3 = ', "state":';
   $param4 = ',}]}'; 
-  $json = $param1.$role_id.$param4;
+  $json = $param1.$recordId.$param10.$role_id.$param4;
   //$json = $param1.$last_name.$param10.$reportingid.$param2.$Emp_Code.$param3.$state.$param4;
   //$json = $param1.$last_name.$param2.$Emp_Code.$param3.$state.$param4;
   error_log($json);
@@ -86,7 +87,7 @@ foreach ( $movies as $movie ) {
             error_log($val);
             $access_token=$val;
             //$url = "https://www.zohoapis.com/crm/v2/users/{$recordId}";
-            $url = "https://crm.zoho.com/crm/v2/Users/{$recordId}";
+            $url = "https://crm.zoho.com/crm/v2/Users";
             error_log($url);
             $accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
             $headers = array("Authorization: $accesstokenparam");
