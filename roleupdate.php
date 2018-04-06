@@ -26,7 +26,7 @@ foreach ( $movies as $movie ) {
       $last_name = '"'.$value.'"';
     }
   }
-  $url = "https://www.zohoapis.com/crm/v2/users/{$recordId}";
+  $url = "https://crm.zoho.com/crm/v2/Users/{$recordId}";
   error_log($url);
   $accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
   $headers = array("Authorization: $accesstokenparam");
@@ -85,7 +85,8 @@ foreach ( $movies as $movie ) {
           if(strpos($key, $access_token_param)!== false){
             error_log($val);
             $access_token=$val;
-            $url = "https://www.zohoapis.com/crm/v2/users/{$recordId}";
+            //$url = "https://www.zohoapis.com/crm/v2/users/{$recordId}";
+            $url = "https://crm.zoho.com/crm/v2/Users/{$recordId}";
             error_log($url);
             $accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
             $headers = array("Authorization: $accesstokenparam");
