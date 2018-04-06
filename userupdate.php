@@ -61,10 +61,7 @@ foreach ( $movies as $movie ) {
   $param6 = ', "profile_id":';
   $param7 = ', "first_name":';
   $param8 = ', "last_name":';
-  $param4 = ',}]}'; 
-  
-  Emp code	First Name	Agent Email ID	IRA Code	Role ID	User ID	IRA Email	IRA User ID	Last Name	State
-
+  $param4 = ',}]}';   
   //$json = $param1.$reportingid.$param4;
   //$json = $param1.$last_name.$param10.$reportingid.$param2.$Emp_Code.$param3.$state.$param4;
   $json = $param1.$Emp_Code.$param3.$state.$param5.$role_id.$param7.$first_name.$param8.$last_name.$param4;
