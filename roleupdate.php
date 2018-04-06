@@ -35,7 +35,6 @@ foreach ( $movies as $movie ) {
   //$headers->Authorization = $accesstokenparam;
   error_log(json_encode($headers));
   $ch = curl_init();
-  "id":"6000000031085", 
   $param1 = '{"users":[{"id":';
   $param10 = ',"role_id":';
   //$param2 = ', "Emp_Code":';
