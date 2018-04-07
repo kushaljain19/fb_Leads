@@ -132,6 +132,7 @@ array("user_Id"=>"1699841000456449929","email_id"=>"vimal.koshy@5paisa.com","rol
 $userd_id_param="user_Id";
 $role_id_param="role_id";
 $Emp_Code_param="Emp_Code";
+$reporting_id_param="reporting_id";
 $last_name_param="last_name";
 $state_param="state";
 foreach ( $movies as $movie ) {
@@ -151,6 +152,9 @@ foreach ( $movies as $movie ) {
     }
     if(strpos($key, $last_name_param)!== false){
       $last_name = '"'.$value.'"';
+    }
+    if(strpos($key, $reporting_id_param)!== false){
+      $reporting_id = '"'.$value.'"';
     }
   }
   $url = "https://crm.zoho.com/crm/v2/Users";
