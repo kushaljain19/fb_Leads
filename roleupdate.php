@@ -1,5 +1,5 @@
 <?php
-$access_token = "1000.c12d93fb04b6e67a4ddf450394c17bd4.710d2333a30f67f71af9428301dcb78b";
+$access_token = "1000.b001ede62e33a522e0d26c061fff21db.c931f830937d2fbfb5de0543feaac8cb";
 $movies = array(
 array("user_Id"=>"1699841000123974255","email_id"=>"ramyashree.r@5paisa.com","role_id"=>"1699841000342631703","Emp_Code"=>"C151432","first_Name"=>"Ramyashree Rangaramaiah R","reporting_id"=>"1699841000094077425","last_name"=>"Bangalore Sales","State"=>"Bangalore"),
 array("user_Id"=>"1699841000123900680","email_id"=>"divya.gonda@5paisa.com","role_id"=>"1699841000342631703","Emp_Code"=>"C151354","first_Name"=>"Divya Deva Gonda","reporting_id"=>"1699841000094077425","last_name"=>"Bangalore Sales","State"=>"Bangalore"),
@@ -32,7 +32,7 @@ foreach ( $movies as $movie ) {
       $reporting_id = '"'.$value.'"';
     }
   }
-  $url = "https://crm.zoho.com/crm/v2/Users/$recordId";
+  $url = "https://www.zohoapis.com/crm/v2/users/$recordId";
   error_log($url);
   $accesstokenparam = "Zoho-oauthtoken"." ".$access_token;
   $headers = array("Authorization: $accesstokenparam");
