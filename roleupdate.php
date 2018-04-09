@@ -1,5 +1,5 @@
 <?php
-$access_token = "1000.b32ec2203df4e958c359b08907c61b9f.9c12ae178c6e41992db76a8d6bb4ff78";
+$access_token = "1000.ae588d53c76ae1268cce5bffedfe3c47.0d3d31a27dbe8a38383e95988c4ff491";
 $movies = array(
 array("user_Id"=>"1699841000130381537","email_id"=>"a202013@5paisa.com","role_id"=>"1699841000342631699","Emp_Code"=>"A202013","first_Name"=>"Hussain Mohdqayyum Shaikh","reporting_id"=>"1699841000000451109","last_name"=>"Mumbai Sales","State"=>"Mumbai"),
 array("user_Id"=>"1699841000005898906","email_id"=>"yogesh.patil@5paisa.com","role_id"=>"1699841000342631699","Emp_Code"=>"C144943","first_Name"=>"Yogesh Prakash Patil","reporting_id"=>"1699841000000451109","last_name"=>"Mumbai Sales","State"=>"Mumbai"),
@@ -241,15 +241,15 @@ foreach ( $movies as $movie ) {
   //$headers->Authorization = $accesstokenparam;
   error_log(json_encode($headers));
   $ch = curl_init();
-  //$param1 = '{"users":[{"Reporting_To":{"id":';
-  $param1 = '{"users":[{"role":';
-  $param10 = ',"role_id":';
+  $param1 = '{"users":[{"Reporting_To":{"id":';
+  //$param1 = '{"users":[{"role":';
+  //$param10 = ',"role_id":';
   $param9 = ',"reporting_to_id":';
   $reportingid = $reporting_id;
   //$param2 = ', "Emp_Code":';
   //$param3 = ', "state":';
-  //$param4 = '}}]}'; 
-  $param4 = '}]}'; 
+  $param4 = '}}]}'; 
+  //$param4 = '}]}'; 
   /*
   {
     "users": [
@@ -271,8 +271,8 @@ foreach ( $movies as $movie ) {
      ]
 }*/
   
-  //$json = $param1.$reportingid.$param4;
-  $json = $param1.$role_id.$param4;
+  $json = $param1.$reportingid.$param4;
+  //$json = $param1.$role_id.$param4;
   //$json = $param1.$last_name.$param10.$reportingid.$param2.$Emp_Code.$param3.$state.$param4;
   //$json = $param1.$last_name.$param2.$Emp_Code.$param3.$state.$param4;
   error_log($json);
