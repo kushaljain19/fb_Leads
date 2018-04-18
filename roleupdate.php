@@ -119,8 +119,8 @@ foreach ( $movies as $movie ) {
   $reportingid = $reporting_id;
   //$param2 = ', "Emp_Code":';
   //$param3 = ', "state":';
-  $param4 = '}}]}'; 
-  //$param4 = '}]}'; 
+  //$param4 = '}}]}'; 
+  $param4 = '}]}'; 
   /*
   {
     "users": [
