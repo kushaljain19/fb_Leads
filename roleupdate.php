@@ -112,15 +112,15 @@ foreach ( $movies as $movie ) {
   //$headers->Authorization = $accesstokenparam;
   error_log(json_encode($headers));
   $ch = curl_init();
-  //$param1 = '{"users":[{"Reporting_To":{"id":';
-  $param1 = '{"users":[{"role":';
+  $param1 = '{"users":[{"Reporting_To":{"id":';
+  //$param1 = '{"users":[{"role":';
   //$param10 = ',"role_id":';
   $param9 = ',"reporting_to_id":';
   $reportingid = $reporting_id;
   //$param2 = ', "Emp_Code":';
   //$param3 = ', "state":';
-  //$param4 = '}}]}'; 
-  $param4 = '}]}'; 
+  $param4 = '}}]}'; 
+  //$param4 = '}]}'; 
   /*
   {
     "users": [
@@ -142,8 +142,8 @@ foreach ( $movies as $movie ) {
      ]
 }*/
   
-  //$json = $param1.$reportingid.$param4;
-  $json = $param1.$role_id.$param4;
+  $json = $param1.$reportingid.$param4;
+  //$json = $param1.$role_id.$param4;
   //$json = $param1.$last_name.$param10.$reportingid.$param2.$Emp_Code.$param3.$state.$param4;
   //$json = $param1.$last_name.$param2.$Emp_Code.$param3.$state.$param4;
   error_log($json);
