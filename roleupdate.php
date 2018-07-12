@@ -67,7 +67,6 @@ array("user_Id"=>"1699841000272770521","email_id"=>"a202448@5paisa.com","role_id
 array("user_Id"=>"1699841000333820280","email_id"=>"a202530@5paisa.com","role_id"=>"1699841000333820280","Emp_Code"=>"A202530","first_Name"=>"Sandip Suryavanshi","reporting_id"=>"1699841000283635235","last_name"=>"","State"=>""),
 array("user_Id"=>"1699841000638159023","email_id"=>"anmol.khatri@5paisa.com","role_id"=>"1699841000638159023","Emp_Code"=>"C160187","first_Name"=>"Anmol Gulabbhai Khatri","reporting_id"=>"1699841000008620396","last_name"=>"","State"=>""),
 array("user_Id"=>"1699841000638113031","email_id"=>"sanjay.jaiswal@5paisa.com","role_id"=>"1699841000638113031","Emp_Code"=>"C160218","first_Name"=>"Sanjay Ramchandra Jaiswal","reporting_id"=>"1699841000469652974","last_name"=>"","State"=>""),
-#N/A
 array("user_Id"=>"1699841000638060275","email_id"=>"rajesh.hathiya@5paisa.com","role_id"=>"1699841000638060275","Emp_Code"=>"C160188","first_Name"=>"Rajesh Devshibhai Hathiya","reporting_id"=>"1699841000469652974","last_name"=>"","State"=>""),
 array("user_Id"=>"1699841000372417460","email_id"=>"a202595@5paisa.com","role_id"=>"1699841000372417460","Emp_Code"=>"A202595","first_Name"=>"Niharika Kharadi","reporting_id"=>"1699841000283635235","last_name"=>"","State"=>""),
 array("user_Id"=>"1699841000425251746","email_id"=>"nitesh.mada@5paisa.com","role_id"=>"1699841000425251746","Emp_Code"=>"C158075","first_Name"=>"Nitesh Mada","reporting_id"=>"1699841000334638613","last_name"=>"","State"=>""),
