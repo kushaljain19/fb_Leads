@@ -127,7 +127,7 @@ array("user_Id"=>"1699841000687840011","email_id"=>"a202761@5paisa.com","role_id
 array("user_Id"=>"1699841000686113794","email_id"=>"a202774@5paisa.com","role_id"=>"1699841000686113794","Emp_Code"=>"a202774","first_Name"=>"Fangal","reporting_id"=>"","last_name"=>"","State"=>""),
 array("user_Id"=>"1699841000686219068","email_id"=>"a202767@5paisa.com","role_id"=>"1699841000686219068","Emp_Code"=>"A202767","first_Name"=>"Gupta","reporting_id"=>"","last_name"=>"","State"=>""),
 array("user_Id"=>"1699841000686652592","email_id"=>"a202771@5paisa.com","role_id"=>"1699841000686652592","Emp_Code"=>"A202771","first_Name"=>"Ojha","reporting_id"=>"","last_name"=>"","State"=>""),
-"array(""user_Id""=>""1699841000686148595"",""email_id""=>""a202762@5paisa.com"",""role_id""=>""1699841000686148595"",""Emp_Code""=>""a202762"",""first_Name""=>""Mane	"",""reporting_id""=>"""",""last_name""=>"""",""State""=>""""),"
+array("user_Id"=>"1699841000686148595","email_id"=>"a202762@5paisa.com","role_id"=>"1699841000686148595","Emp_Code"=>"a202762","first_Name"=>"Mane","reporting_id"=>"","last_name"=>"","State"=>""),
 array("user_Id"=>"1699841000686219062","email_id"=>"a202757@5paisa.com","role_id"=>"1699841000686219062","Emp_Code"=>"a202757","first_Name"=>"Kodape","reporting_id"=>"","last_name"=>"","State"=>""),
 array("user_Id"=>"1699841000686668915","email_id"=>"a202759@5paisa.com","role_id"=>"1699841000686668915","Emp_Code"=>"A202759","first_Name"=>"Sanaboina","reporting_id"=>"","last_name"=>"","State"=>""),
 array("user_Id"=>"1699841000686221729","email_id"=>"a202756@5paisa.com","role_id"=>"1699841000686221729","Emp_Code"=>"A202756","first_Name"=>"Maity","reporting_id"=>"","last_name"=>"","State"=>""),
